@@ -11,7 +11,7 @@ header {
     background-color: #ffffff;
 }
 .menuNav {
-    background-color: coral;
+    background-color: #F4877A;
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -28,4 +28,5 @@ main {
     justify-content: center;
     position: relative;
     top: 0;
+    background: linear-gradient(0deg, rgba(1,28,46,1) 0%, rgba(4,35,56,1) 100%);
 }
