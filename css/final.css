@@ -68,14 +68,37 @@ section {
     margin-bottom: 10px;
 }
 
-.atracao {
-    display: block;
+.card {
     border: 9px solid #c2c2c2;
+    display: block;
     border-radius: 50px;
     width: 300px;
     height: 300px;
     box-sizing: border-box;
+    overflow: clip;
+    background-color: #ffffff;
+    transition: height 600ms ease-in-out;
+    box-shadow: 0px 0px 15px rgba(49, 49, 49, 0.322);
 }
+
+.card:hover {
+    height: 450px;
+}
+
+.card > img {
+    height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+}
+
+.cardWrapper{
+    width: 300px;
+    height: 300px;
+    border-radius: 60px;
+    display: flex;
+}
+
 .maisComprados {
     gap: 30px 0px;
     display: flex;
@@ -84,7 +107,7 @@ section {
     align-items: flex-start;
     align-content: flex-start;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 20px 20px 170px 20px;
     width: 100%;
     box-sizing: border-box;
 }
