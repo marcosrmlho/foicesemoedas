@@ -1,0 +1,12 @@
+{
+  "name": "foicesemoedas",
+  "version": "1.0.0",
+  "description": "Kamikaze Radical, trabalho escolar",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Marcos Ramalho e Thiago Benjamim",
+  "license": "MIT"
+}
