@@ -22,7 +22,10 @@ const getChildrenHtml = (children) => {
 }
 
 const maisComprados = document.querySelector(".maisComprados");
+
 let zIndex = 2000;
+
+
 maisComprados.innerHTML = getChildrenHtml([
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", zIndex--, "8"),
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", zIndex--, "8"),
@@ -34,3 +37,15 @@ maisComprados.innerHTML = getChildrenHtml([
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", zIndex--, "8"),
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", zIndex--, "8")
 ]);
+
+const getCardInfo = (idCard) => {
+            axios.get(`/api/getcard?id=${idCard}`)
+
+            .then((response) => {
+                const dados = response.data
+                alert(`Minha imgSource é ${dados.imgSource}. Minha altImg é ${dados.altImg}. Minha descrição é ${dados.descricao}. Meu ranking é ${dados.ranking}.`);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        }
