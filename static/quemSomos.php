@@ -46,7 +46,7 @@
 
         
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="../libs/owlCarousel/owl.carousel.min.js"></script>
     <script src="../js/final.js"></script>
 </body>
