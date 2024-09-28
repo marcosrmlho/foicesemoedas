@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamikaze Radical</title>
-    <link rel="stylesheet" href="./css/final.css">
-    <link rel="stylesheet" href="./libs/owlCarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/final.css">
+    <link rel="stylesheet" href="../libs/owlCarousel/assets/owl.carousel.min.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 
         <section>
             <h1 class="inicio">
-                Carrinho
+                Quem Somos
             </h1>
         </section>
 
@@ -47,8 +47,8 @@
         
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./libs/owlCarousel/owl.carousel.min.js"></script>
-    <script src="./js/final.js"></script>
+    <script src="../libs/owlCarousel/owl.carousel.min.js"></script>
+    <script src="../js/final.js"></script>
 </body>
 
 </html>
