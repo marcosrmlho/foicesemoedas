@@ -34,6 +34,20 @@
             <h1 class="inicio">
                 Quem Somos
             </h1>
+
+            <div class="textoCorpo">
+            Desde 2024, a Kamikaze Radical tem sido o combustível para aqueles que buscam emoção,
+            adrenalina e experiências inesquecíveis. Somos uma empresa dedicada a transformar o cotidiano dos nossos clientes,
+            oferecendo pacotes de esportes radicais e passeios cheios de aventura. Seja em águas agitadas, trilhas desafiadoras ou nos ares,
+            garantimos momentos de pura adrenalina, sempre com segurança e muita diversão.
+            </div>
+            
+            <div class="textoCorpo">
+            Nosso compromisso é levar você ao limite, proporcionando vivências que ficarão na memória para sempre.
+            Com uma equipe apaixonada por aventura e experiente no que faz, a Kamikaze Radical é o diferencial que você procura para sair da rotina e viver intensamente.
+            Aqui, sua próxima aventura está a um passo de distância. Venha conosco e sinta a emoção!
+            </div>
+            
         </section>
 
         <footer>
