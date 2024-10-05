@@ -13,6 +13,8 @@
 <body>
 
     <main>
+
+
         <header>
 
             <div class="logo">
@@ -28,8 +30,6 @@
                 <a href="./login.php" class="linkNav">Login</a>
             </nav>
         </header>
-
-
         <section>
 
                 <h1 class="inicio">
@@ -54,7 +54,7 @@
         </section>
 
         <footer>
-            <address>   
+            <address>
                 R. Gen. Canabarro, 485 - Maracanã, Rio de Janeiro - RJ, 20271-204
                 <a href="tel:+5521912345678">Tel: (21) 91234-5678</a>
                 <a href="mailto:contato@kamikaze.com" class="txtLink">contato@kamikaze.com</a>
