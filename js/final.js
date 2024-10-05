@@ -1,6 +1,6 @@
 const getCard = (imgSource, altImg, descricao, zIndex, ranking) => {
     const cardTemplate = `
-        <a class="cardWrapper" style="z-index: ${zIndex};" href="../static/cardAsaDelta.php">
+        <div class="cardWrapper" style="z-index: ${zIndex};" onclick="window.location='../static/cardAsaDelta.php';">
             <div class="card">
                 <img src="${imgSource}" alt="${altImg}">
                 <div class="cardDescricao">
@@ -12,7 +12,7 @@ const getCard = (imgSource, altImg, descricao, zIndex, ranking) => {
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
     `;
     return cardTemplate;
 }
