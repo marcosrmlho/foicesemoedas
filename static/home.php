@@ -1,3 +1,7 @@
+<?php
+include './scripts/teste.php';
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -6,7 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamikaze Radical</title>
-    <link rel="stylesheet" href="../css/final.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/cards.css">
     <link rel="stylesheet" href="../libs/owlCarousel/assets/owl.carousel.min.css">
 </head>
 
@@ -43,14 +48,30 @@
                 </div>
 
                 <div class="pacotes">
-
                     <div class="anuncioPacotes">
-                        <h2>Os Pacotes mais comprados do mês:</h2>
+                        <h2>Pacotes:</h2>
                     </div>
 
-                    <div class="maisComprados"></div>
+                    <div class="maisComprados">
+                        <?php 
+                            foreach($cardData as $card) {
+                                echo $card;
+                            }
+                        ?>
+                    </div>
 
+                    <div class="ordenacao">
+                        <form action="#" method="get">
+                            <select name="ordenar">
+                                <option selected>Ordenar Por:</option>
+                                <option value="data">Data</option>
+                                <option value="ranking">Ranking</option>
+                            </select>
+                            <input type="submit" value="Ordenar Pacotes">
+                        </form>
+                    </div>
                 </div>
+
         </section>
 
         <footer>
@@ -66,6 +87,7 @@
 
     <script src="../libs/owlCarousel/owl.carousel.min.js"></script>
     <script src="../js/final.js"></script>
+    <script src="../js/ordenacao.js"></script>
 </body>
 
 </html>
