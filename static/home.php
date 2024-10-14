@@ -1,5 +1,5 @@
 <?php
-include './scripts/teste.php';
+include './scripts/criarCards.php';
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +53,7 @@ include './scripts/teste.php';
                     </div>
 
                     <div class="maisComprados">
-                        <?php 
+                        <?php
                             foreach($cardData as $card) {
                                 echo $card;
                             }
@@ -67,7 +67,7 @@ include './scripts/teste.php';
                                 <option value="data">Data</option>
                                 <option value="ranking">Ranking</option>
                             </select>
-                            <input type="submit" value="Ordenar Pacotes">
+                            <input type="button" onclick="ordenacao(ordenar.value)" value="Ordenar Pacotes">
                         </form>
                     </div>
                 </div>
