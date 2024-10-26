@@ -85,7 +85,6 @@ include './scripts/criarCards.php';
         
     </main>
 
-    <script src="../libs/owlCarousel/owl.carousel.min.js"></script>
     <script src="../js/final.js"></script>
     <script src="../js/ordenacao.js"></script>
 </body>

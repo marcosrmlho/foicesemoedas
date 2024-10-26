@@ -47,7 +47,6 @@
         
     </main>
 
-    <script src="../libs/owlCarousel/owl.carousel.min.js"></script>
     <script src="../js/final.js"></script>
 </body>
 
