@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamikaze Radical</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../libs/owlCarousel/assets/owl.carousel.min.css">
+
 </head>
 
 <body>
@@ -19,7 +19,7 @@
                 <img src="designKamikaze.svg" alt="Logomarca Kamikaze Radical" height="200px" width="200px" id="design">
                 <h1 class="nome">Kamikaze Radical</h1>
             </div>
-
+            
             <nav class="menuNav">
                 <a href="./" class="linkNav">Home</a>
                 <a href="./categorias.php" class="linkNav">Categorias</a>
@@ -32,7 +32,7 @@
 
         <section>
             <h1 class="inicio">
-                Carrinho
+                Categorias
             </h1>
         </section>
 

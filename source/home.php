@@ -12,7 +12,6 @@ include './scripts/criarCards.php';
     <title>Kamikaze Radical</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/cards.css">
-    <link rel="stylesheet" href="../libs/owlCarousel/assets/owl.carousel.min.css">
 </head>
 
 <body>

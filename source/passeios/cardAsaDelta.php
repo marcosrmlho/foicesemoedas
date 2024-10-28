@@ -8,7 +8,7 @@
     <title>Kamikaze Radical</title>
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/cards.css">
-    <link rel="stylesheet" href="../../libs/owlCarousel/assets/owl.carousel.min.css">
+
 </head>
 
 <body>
@@ -34,10 +34,10 @@
         <section>
 
                 <h1 class="inicio">
-                    Pacote: Salto de Bungee Jump no Corcovado
+                    Pacote: Passeio de Asa Delta na Pedra da Gávea
                 </h1>
 
-                <div class="pacotes">bsbsbsbbs</div>
+                <div class="pacotes">asdads</div>
 
         </section>
 
@@ -51,7 +51,6 @@
 
         
     </main>
-
     <script src="../../js/final.js"></script>
 </body>
 

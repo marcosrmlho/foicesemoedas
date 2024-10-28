@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamikaze Radical</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../libs/owlCarousel/assets/owl.carousel.min.css">
+
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 
         <section>
             <h1 class="inicio">
-                Login
+                Carrinho
             </h1>
         </section>
 

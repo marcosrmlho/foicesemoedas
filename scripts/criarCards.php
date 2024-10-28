@@ -17,19 +17,24 @@ function getCard($imgSource, $altImg, $descricao, $zIndex, $ranking, $cardDir) {
     ";
     return $cardTemplate;
 };
+
 $cardData = [];
+
 include 'banco/banco.php';
+
+criarBanco();
 
 $zIndex = 2000;
 
-$passeios = $conn -> query('Select * from Passeios');
+$passeios = $conn -> query('Select * from Passeios limit 9');
 
 sort($passeios);
+
 foreach($passeios as $passeio){
     array_push($cardData ,getCard("$passeio[8]", "$passeio[9]", "$passeio[5]", $zIndex--, "$passeio[6]", "$passeio[10]"));
 };
 
-/*$cardData = [
+$cardData = [
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", $zIndex--, "8", "cardAsaDelta"),
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", $zIndex--, "8", "cardAsaDelta"),
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", $zIndex--, "8", "cardAsaDelta"),
@@ -39,5 +44,5 @@ foreach($passeios as $passeio){
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", $zIndex--, "8", "cardAsaDelta"),
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", $zIndex--, "8", "cardAsaDelta"),
     getCard("imagemAsaDelta.webp", "Imagem da Aventura Asa Delta", "Passeio de Asa Delta na Pedra da Gávea", $zIndex--, "8", "cardAsaDelta")
-];*/
+];
 ?>
