@@ -1,0 +1,72 @@
+.card {
+    border: 9px solid #c2c2c2;
+    display: block;
+    border-radius: 50px;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    overflow: clip;
+    background-color: #ffffff;
+    transition: height 600ms ease-in-out;
+    box-shadow: 0px 0px 15px rgba(49, 49, 49, 0.322);
+}
+
+.card:hover {
+    height: 450px;
+}
+
+.card > img {
+    height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+    object-fit: cover;
+}
+
+.cardWrapper {
+    width: 300px;
+    height: 300px;
+    border-radius: 60px;
+    display: flex;
+}
+.pacotes {
+    background-color: #ffffff;
+    display: flex;
+    flex-flow: column nowrap;
+    box-shadow: 0px 0px 2px rgba(49, 49, 49, 0.322);
+}
+.anuncioPacotes {
+    display: block;
+    padding-left: 30px;
+}
+.maisComprados {
+    gap: 30px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 20px 20px 170px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.cardDescricao {
+    justify-content: space-around;
+    font-size: 14pt;
+    color: #011c2e;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+.descricao {
+    max-width: 40%;
+    display: block;
+}
+.ranking {
+    display: block;
+    max-width: 40%;
+}
+.ordenacao {
+    align-self: center;
+    max-width: fit-content;
+    margin-bottom: 10px;
+}
