@@ -1,5 +1,5 @@
 <?php
-include './scripts/criarCards.php';
+include './../scripts/criarCards.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +10,8 @@ include './scripts/criarCards.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamikaze Radical</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="../public/css/cards.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ include './scripts/criarCards.php';
         <header>
 
             <div class="logo">
-                <img src="designKamikaze.svg" alt="Logomarca Kamikaze Radical" height="200px" width="200px" id="design">
+                <img src="./../public/imagens/designKamikaze.svg" alt="Logomarca Kamikaze Radical" height="200px" width="200px" id="design">
                 <h1 class="nome">Kamikaze Radical</h1>
             </div>
 
@@ -67,6 +67,7 @@ include './scripts/criarCards.php';
                                 <option value="ranking">Ranking</option>
                             </select>
                             <input type="button" onclick="ordenacao(ordenar.value)" value="Ordenar Pacotes">
+                            
                         </form>
                     </div>
                 </div>
@@ -84,8 +85,7 @@ include './scripts/criarCards.php';
         
     </main>
 
-    <script src="../js/final.js"></script>
-    <script src="../js/ordenacao.js"></script>
+    <script src="../public/js/final.js"></script>
 </body>
 
 </html>

@@ -6,20 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamikaze Radical</title>
-    <link rel="stylesheet" href="../css/index.css">
-
+    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="../public/css/cards.css">
 </head>
 
 <body>
 
     <main>
+
+
         <header>
 
             <div class="logo">
-                <img src="designKamikaze.svg" alt="Logomarca Kamikaze Radical" height="200px" width="200px" id="design">
+                <img src="./../public/imagens/designKamikaze.svg" alt="Logomarca Kamikaze Radical" height="200px" width="200px" id="design">
                 <h1 class="nome">Kamikaze Radical</h1>
             </div>
-            
+
             <nav class="menuNav">
                 <a href="./" class="linkNav">Home</a>
                 <a href="./categorias.php" class="linkNav">Categorias</a>
@@ -47,7 +49,7 @@
         
     </main>
 
-    <script src="../js/final.js"></script>
+    <script src="../public/js/final.js"></script>
 </body>
 
 </html>
