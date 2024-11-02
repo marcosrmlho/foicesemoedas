@@ -18,7 +18,7 @@
         <header>
 
             <div class="logo">
-                <img src="./../public/imagens/designKamikaze.svg" alt="Logomarca Kamikaze Radical" height="200px" width="200px" id="design">
+                <img src="./../../public/imagens/designKamikaze.svg" alt="Logomarca Kamikaze Radical" height="200px" width="200px" id="design">
                 <h1 class="nome">Kamikaze Radical</h1>
             </div>
 
