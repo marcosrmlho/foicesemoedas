@@ -1,5 +1,13 @@
 <?php
 include './../scripts/criarCards.php';
+//lembrar de mudar para o total de paginas existentes puxando do banco
+$paginasTotais = 1000;
+
+$voltar = $currentPage <=0 ? 0 : $currentPage-1;
+$botaoVoltar = "./?page=$voltar";
+
+$frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1;
+$botaoFrente = "./?page=$frente";
 ?>
 
 <!DOCTYPE html>
@@ -60,15 +68,24 @@ include './../scripts/criarCards.php';
                     </div>
 
                     <div class="ordenacao">
-                        <form action="#" method="get">
-                            <select name="ordenar">
-                                <option selected>Ordenar Por:</option>
-                                <option value="data">Data</option>
-                                <option value="ranking">Ranking</option>
-                            </select>
-                            <input type="button" onclick="ordenacao(ordenar.value)" value="Ordenar Pacotes">
+
+                            <div class="pagina">
+                                <a href="<?php echo $botaoVoltar; ?>"><</a>
+                                <?php
+                                    echo "$currentPage"
+                                ?>
+                                <a href="<?php echo $botaoFrente; ?>">></a>
+                            </div>
+
+                            <form action="#" method="get">
+                                <select name="ordenar">
+                                    <option selected>Ordenar Por:</option>
+                                    <option value="data">Data</option>
+                                    <option value="ranking">Ranking</option>
+                                </select>
+                                <input type="button" onclick="ordenacao(ordenar.value)" value="Ordenar Pacotes">
+                            </form>
                             
-                        </form>
                     </div>
                 </div>
 

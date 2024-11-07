@@ -41,7 +41,7 @@ function getPaginatedPasseiosDataFromDB($page, $pageSize) {
     global $conn;
     $skip = $pageSize * $page;
     $take = $pageSize;
-    $passeios = $conn->query("select * from Passeio LIMIT $take OFFSET $skip");
+    $passeios = $conn->query("select * from Passeio limit $take offset $skip");
     
     // Transformar o resultado em um array para poder ordená-lo
     $passeiosArray = [];
@@ -60,8 +60,6 @@ $currentPage = array_key_exists("page",$queryParameters) && $queryParameters["pa
 
 $passeiosArray = getPaginatedPasseiosDataFromDB($currentPage, $pageSize);
 
-// Ordenar o array
-sort($passeiosArray);
 $cardData = [];
 
 foreach ($passeiosArray as $passeio) {

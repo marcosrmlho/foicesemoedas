@@ -23,11 +23,11 @@
             </div>
 
             <nav class="menuNav">
-                <a href="./" class="linkNav">Home</a>
-                <a href="./categorias.php" class="linkNav">Categorias</a>
-                <a href="./carrinho.php" class="linkNav">Carrinho</a>
-                <a href="./quemSomos.php" class="linkNav">Quem Somos</a>
-                <a href="./login.php" class="linkNav">Login</a>
+                <a href="./.." class="linkNav">Home</a>
+                <a href="./../categorias.php" class="linkNav">Categorias</a>
+                <a href="./../carrinho.php" class="linkNav">Carrinho</a>
+                <a href="./../quemSomos.php" class="linkNav">Quem Somos</a>
+                <a href="./../login.php" class="linkNav">Login</a>
             </nav>
         </header>
 
