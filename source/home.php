@@ -1,8 +1,6 @@
 <?php
 include './../scripts/criarCards.php';
 
-$paginasTotais = 1000;
-
 $voltar = $currentPage <= 0 ? 0 : $currentPage-1;
 
 $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1;
@@ -44,18 +42,19 @@ $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1
         <section>
 
                 <h1 class="inicio">
-                    Explore as maravilhas do Brasil e do Mundo com o Kamikaze!
+                    Explore as maravilhas ao redor do Brasil com o Kamikaze!
                 </h1>
 
                 <div class="textoCorpo">
-                    Aqui na Kamikaze Radical, nós fazemos sonhos virarem realidade. Com coragem e dedicação, disponibilizamos mais de 150 passeios para todos os públicos, todos os dias.
+                    Aqui na Kamikaze Radical, nós fazemos sonhos virarem realidade. Com coragem e dedicação, disponibilizamos inúmeros passeios para todos os públicos, todos os dias.
                     Isso só é possível por conta do esforço diário de uma equipe de guias que cadastram seus pacotes na plataforma para você aproveitar ao máximo o estilo radical de ser!
                     Vem fazer história com a gente você também!
                 </div>
 
-                <div class="pacotes">
-                    <div class="anuncioPacotes">
+                <div class="secao">
+                    <div class="anuncio">
                         <h2>Pacotes:</h2>
+                        <h3>Aqui estão os nossos pacotes!</h3>
                     </div>
 
                     <div class="maisComprados">
@@ -68,22 +67,21 @@ $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1
 
                     <div class="ordenacao">
 
-                            <div class="pagina">
+                            <div class="mudarPagina">
                                 <button id="voltar"><</button>
-                                <?php
+                                <p id="paginaAtual"><?php
                                     $currentPageString = $currentPage + 1;
                                     echo "$currentPageString"
-                                ?>
+                                ?></p>
                                 <button id="frente">></button>
                             </div>
 
-                            <form action="#" method="get">
-                                <select name="ordenar" id="ordenar">
-                                    <option value=""<?php echo $ordenacaoAtual==null ? "selected" : "" ?>>Ordenar Por:</option>
-                                    <option value="data" <?php echo $ordenacaoAtual=="data" ? "selected" : "" ?>>Data</option>
-                                    <option value="ranking" <?php echo $ordenacaoAtual=="ranking" ? "selected" : "" ?>>Ranking</option>
-                                </select>
-                            </form>
+                            
+                            <select name="ordenar" id="ordenar">
+                                <option value=""<?php echo $ordenacaoAtual==null ? "selected" : "" ?>>Ordenar Por:</option>
+                                <option value="data" <?php echo $ordenacaoAtual=="data" ? "selected" : "" ?>>Data</option>
+                                <option value="ranking" <?php echo $ordenacaoAtual=="ranking" ? "selected" : "" ?>>Ranking</option>
+                            </select>
                             
                     </div>
                 </div>

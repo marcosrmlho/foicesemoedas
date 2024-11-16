@@ -1,7 +1,6 @@
 var url_atual = window.location.href.split("?")[0];
 
 function getNextData(ordenacao, pagina) {
-    console.log("ordenação:", ordenacao, " página:", pagina)
     window.location.href = url_atual + `?page=${pagina}&ordenacao=${ordenacao}`
 };
 

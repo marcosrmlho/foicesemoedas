@@ -1,15 +1,14 @@
 <?php 
 include './../banco/banco.php';
-$numberOfElementsPerPage = 9; 
 
-function getCard($imgSource, $altImg, $descricao, $zIndex, $ranking, $cardDir) {
+function getCard($imgSource, $altImg, $nome, $zIndex, $ranking, $cardDir) {
     $cardTemplate = "
         <div class=\"cardWrapper\" style=\"z-index: $zIndex;\" onclick=\"window.location='./passeios/$cardDir.php';\">
             <div class=\"card\">
                 <img src=\"../public/imagens/$imgSource\" alt=\"$altImg\">
                 <div class=\"cardDescricao\">
                     <div class=\"descricao\">
-                        $descricao
+                        $nome
                     </div>
                     <div class=\"ranking\">
                         Ranking: <b>$ranking</b>
@@ -66,14 +65,15 @@ $zIndex = 9;
 $pageSize = 9;
 
 $queryParameters = getQueryParameters();
-
 $ordenacaoAtual = array_key_exists("ordenacao",$queryParameters) && $queryParameters["ordenacao"] != NULL ? $queryParameters["ordenacao"] : null;
-
 $currentPage = array_key_exists("page",$queryParameters) && $queryParameters["page"] != NULL ? intval($queryParameters["page"]) : 0;
-
 $passeiosArray = getPaginatedPasseiosDataFromDB($currentPage, $pageSize, $ordenacaoAtual);
 
 $cardData = [];
+
+$passeiosTotais = $conn-> query("select count(*) as numPasseios from passeio;");
+$paginasTotais = $passeiosTotais->fetch_assoc();
+$paginasTotais = ceil((intval($paginasTotais["numPasseios"]))/$pageSize);
 
 foreach ($passeiosArray as $passeio) {
     array_push($cardData, getCard($passeio['imgSource'], $passeio['altImg'], $passeio['nome'], $zIndex--, $passeio['ranking'], $passeio['cardDir']));

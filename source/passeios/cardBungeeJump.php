@@ -38,7 +38,7 @@
                     Pacote: Salto de Bungee Jump no Corcovado
                 </h1>
 
-                <div class="pacotes">bsbsbsbbs</div>
+                <div class="secao">bsbsbsbbs</div>
 
         </section>
 

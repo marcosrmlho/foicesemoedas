@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamikaze Radical</title>
     <link rel="stylesheet" href="../../public/css/index.css">
-    <link rel="stylesheet" href="../../public/css/cards.css">
+    <link rel="stylesheet" href="../../public/css/passeio.css">
 </head>
 
 <body>
@@ -32,13 +32,33 @@
         </header>
 
 
-        <section>
+        <section class="sectionPasseio">
 
-                <h1 class="inicio">
-                    Pacote: Passeio de Asa Delta na Pedra da Gávea
-                </h1>
+                <div>
+                    <h1 class="inicio">
+                        Pacote: Passeio de Asa Delta na Pedra da Gávea
+                    </h1>
 
-                <div class="pacotes">asdads</div>
+                    <div class="secao" id="secaoPasseio">
+                        <div class="anuncio" id="anuncioPasseio">
+                            <p>
+                                Voe sobre o Rio de Janeiro e viva uma experiência <b>única</b> de liberdade!<br>
+                                O passeio de asa-delta tem como ponto de partida a <b>Pedra da Gávea</b>, uma das formações rochosas mais icônicas da cidade.
+                                Inclui <b>transporte até o local, equipamento completo e acompanhamento de um instrutor experiente</b> para garantir a segurança e aproveitar ao máximo o voo.
+                                Durante o trajeto, você contemplará vistas <b>deslumbrantes</b> de praias, florestas e montanhas, finalizando com um pouso suave na <b>Praia de São Conrado</b>.<br>
+                                Ideal para aventureiros e amantes de natureza!
+                            <p>
+                        </div>
+
+                        <div class="imgContainer">
+                            <img src="./../../public/imagens/imagemAsaDelta.webp" alt="Imagem da Aventura Asa Delta" class="imgPasseio">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="secao pagamento">
+                    <button id="addCarrinho">Adcionar ao Carrinho</button>
+                </div>
 
         </section>
 
@@ -53,6 +73,7 @@
         
     </main>
     <script src="../../public/js/final.js"></script>
+    <script src="../../public/js/passeio.js"></script>
 </body>
 
 </html>

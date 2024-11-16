@@ -1,0 +1,48 @@
+#anuncioPasseio.anuncio {
+    margin: 10px;
+    padding: 10px;
+    background-color: #faf7f3;
+    box-shadow: 0px 0px 2px rgba(49, 49, 49, 0.322);
+    max-height: 250px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+#secaoPasseio.secao {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.imgPasseio {
+    box-shadow: 0px 0px 10px rgba(49, 49, 49, 0.322);
+    max-width: 70%;
+    width: auto;
+    border-radius: 10px;
+}
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+.sectionPasseio {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pagamento {
+    align-items: center;
+}
+
+#addCarrinho {
+    appearance: none;
+    border-radius: 7px;
+    border: none;
+    background-color: #F4877A;
+    color: #042338;
+    padding: 5px 10px;
+    margin: 15px;
+    font-weight: bold;
+}
