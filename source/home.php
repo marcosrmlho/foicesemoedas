@@ -1,13 +1,12 @@
 <?php
 include './../scripts/criarCards.php';
-//lembrar de mudar para o total de paginas existentes puxando do banco
+
 $paginasTotais = 1000;
 
-$voltar = $currentPage <=0 ? 0 : $currentPage-1;
-$botaoVoltar = "./?page=$voltar";
+$voltar = $currentPage <= 0 ? 0 : $currentPage-1;
 
 $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1;
-$botaoFrente = "./?page=$frente";
+
 ?>
 
 <!DOCTYPE html>
@@ -70,20 +69,20 @@ $botaoFrente = "./?page=$frente";
                     <div class="ordenacao">
 
                             <div class="pagina">
-                                <a href="<?php echo $botaoVoltar; ?>"><</a>
+                                <button id="voltar"><</button>
                                 <?php
-                                    echo "$currentPage"
+                                    $currentPageString = $currentPage + 1;
+                                    echo "$currentPageString"
                                 ?>
-                                <a href="<?php echo $botaoFrente; ?>">></a>
+                                <button id="frente">></button>
                             </div>
 
                             <form action="#" method="get">
-                                <select name="ordenar">
-                                    <option selected>Ordenar Por:</option>
-                                    <option value="data">Data</option>
-                                    <option value="ranking">Ranking</option>
+                                <select name="ordenar" id="ordenar">
+                                    <option value=""<?php echo $ordenacaoAtual==null ? "selected" : "" ?>>Ordenar Por:</option>
+                                    <option value="data" <?php echo $ordenacaoAtual=="data" ? "selected" : "" ?>>Data</option>
+                                    <option value="ranking" <?php echo $ordenacaoAtual=="ranking" ? "selected" : "" ?>>Ranking</option>
                                 </select>
-                                <input type="button" onclick="ordenacao(ordenar.value)" value="Ordenar Pacotes">
                             </form>
                             
                     </div>
@@ -98,11 +97,18 @@ $botaoFrente = "./?page=$frente";
                 <a href="mailto:contato@kamikaze.com" class="txtLink">contato@kamikaze.com</a>
             </address>
         </footer>
-
-        
     </main>
 
-    <script src="../public/js/final.js"></script>
+<script>
+
+    var paginaAtual = <?php echo $currentPage?>;
+    var voltar = <?php echo $voltar?>;
+    var frente = <?php echo $frente?>;
+    var ordenacaoAtual = "<?php echo $ordenacaoAtual == null ? "" : $ordenacaoAtual?>";
+    
+</script>
+
+<script src="./../public/js/final.js"></script>
 </body>
 
 </html>

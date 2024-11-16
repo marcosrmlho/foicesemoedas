@@ -36,12 +36,23 @@ function getQueryParameters() {
     return $queryResults;
 }
 
-
-function getPaginatedPasseiosDataFromDB($page, $pageSize) {
+function getPaginatedPasseiosDataFromDB($page, $pageSize, $ordenacao) {
     global $conn;
     $skip = $pageSize * $page;
     $take = $pageSize;
-    $passeios = $conn->query("select * from Passeio limit $take offset $skip");
+
+    if ($ordenacao == null){
+        $ordenacao = "";
+    } else {
+    if ($ordenacao == "data"){
+        $ordenacao = "order by dataInicio asc";
+    } else {
+    if ($ordenacao == "ranking"){
+        $ordenacao = "order by ranking desc";
+    }}
+    }
+    
+    $passeios = $conn->query("select * from Passeio $ordenacao limit $take offset $skip");
     
     // Transformar o resultado em um array para poder ordená-lo
     $passeiosArray = [];
@@ -56,9 +67,11 @@ $pageSize = 9;
 
 $queryParameters = getQueryParameters();
 
+$ordenacaoAtual = array_key_exists("ordenacao",$queryParameters) && $queryParameters["ordenacao"] != NULL ? $queryParameters["ordenacao"] : null;
+
 $currentPage = array_key_exists("page",$queryParameters) && $queryParameters["page"] != NULL ? intval($queryParameters["page"]) : 0;
 
-$passeiosArray = getPaginatedPasseiosDataFromDB($currentPage, $pageSize);
+$passeiosArray = getPaginatedPasseiosDataFromDB($currentPage, $pageSize, $ordenacaoAtual);
 
 $cardData = [];
 
