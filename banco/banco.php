@@ -1,6 +1,4 @@
 <?php
-
-include "./../enviroment.php";
   // Criar a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
 

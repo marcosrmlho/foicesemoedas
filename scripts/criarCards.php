@@ -1,9 +1,11 @@
 <?php 
+include '../enviroment.php';
 include './../banco/banco.php';
+include 'funcoesUniversais.php';
 
 function getCard($imgSource, $altImg, $nome, $zIndex, $ranking, $cardDir) {
     $cardTemplate = "
-        <div class=\"cardWrapper\" style=\"z-index: $zIndex;\" onclick=\"window.location='./passeios/$cardDir.php';\">
+        <div class=\"cardWrapper\" style=\"z-index: $zIndex;\" onclick=\"window.location='./passeios/mostraPasseio.php/?cardDir=$cardDir';\">
             <div class=\"card\">
                 <img src=\"../public/imagens/$imgSource\" alt=\"$altImg\">
                 <div class=\"cardDescricao\">
@@ -18,21 +20,6 @@ function getCard($imgSource, $altImg, $nome, $zIndex, $ranking, $cardDir) {
         </div>
     ";
     return $cardTemplate;
-}
-
-
-function getQueryParameters() {
-    $queriesString = explode("&", $_SERVER['QUERY_STRING']);
-    $queryResults = [];
-    foreach ($queriesString as $query) {
-        $query = trim($query);
-        $queryResult = explode('=', $query);
-
-        if ($queryResult != NULL && array_key_exists("0",$queryResult) && $queryResult[0] != NULL && array_key_exists("1",$queryResult) && $queryResult[1] != NULL){
-            $queryResults[$queryResult[0]] = $queryResult[1];
-        }
-    }
-    return $queryResults;
 }
 
 function getPaginatedPasseiosDataFromDB($page, $pageSize, $ordenacao) {
@@ -64,7 +51,6 @@ function getPaginatedPasseiosDataFromDB($page, $pageSize, $ordenacao) {
 $zIndex = 9;
 $pageSize = 9;
 
-$queryParameters = getQueryParameters();
 $ordenacaoAtual = array_key_exists("ordenacao",$queryParameters) && $queryParameters["ordenacao"] != NULL ? $queryParameters["ordenacao"] : null;
 $currentPage = array_key_exists("page",$queryParameters) && $queryParameters["page"] != NULL ? intval($queryParameters["page"]) : 0;
 $passeiosArray = getPaginatedPasseiosDataFromDB($currentPage, $pageSize, $ordenacaoAtual);
