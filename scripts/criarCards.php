@@ -59,7 +59,8 @@ $cardData = [];
 
 $passeiosTotais = $conn-> query("select count(*) as numPasseios from passeio;");
 $paginasTotais = $passeiosTotais->fetch_assoc();
-$paginasTotais = ceil((intval($paginasTotais["numPasseios"]))/$pageSize);
+$numPasseios = intval($paginasTotais["numPasseios"]);
+$paginasTotais = ceil($numPasseios/$pageSize);
 
 foreach ($passeiosArray as $passeio) {
     array_push($cardData, getCard($passeio['imgSource'], $passeio['altImg'], $passeio['nome'], $zIndex--, $passeio['ranking'], $passeio['cardDir']));

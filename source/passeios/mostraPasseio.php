@@ -89,7 +89,7 @@ echo "
                 </div>
 
                 <div class=\"pagamento\">
-                    <p>Preço: <b>R$ $valor</b></p>
+                    <div class=\"preco\"><p>Preço: <b>R$ $valor</b></p></div>
                     <p>Hora e data de início do passeio: às <b>$horaInicio</b> do dia <b>$dataInicio</b></p>
                     <p>Hora e data de encerramento do passeio: às <b>$horaFinal</b> do dia <b>$dataFinal</b></p>
                     <button id=\"addCarrinho\">Adcionar ao Carrinho</button>
@@ -107,6 +107,7 @@ echo "
 
         
     </main>
+    
     <script src=\"../../../public/js/final.js\"></script>
     <script src=\"../../../public/js/passeio.js\"></script>
 </body>

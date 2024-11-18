@@ -54,7 +54,15 @@ $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1
                 <div class="secao">
                     <div class="anuncio">
                         <h2>Pacotes:</h2>
-                        <h3>Aqui estão os nossos pacotes!</h3>
+                        <h3>
+                        <?php
+                        if ($numPasseios == 0){
+                            echo "Nenhum pacote disponível no momento.";
+                        } else {
+                            echo "Aqui estão os nossos pacotes!";
+                        };
+                        ?>
+                    </h3>
                     </div>
 
                     <div class="maisComprados">
