@@ -1,3 +1,8 @@
+<?php
+    include '../scripts/funcoesUniversais.php';
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -49,6 +54,16 @@
         
     </main>
     <script src="../public/js/final.js"></script>
+    <script>
+        /*
+        aqui viria a abertura do php quando eu entender como consertar o erro de diretório
+
+            if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false"){
+                echo 'alert("Faça login para adicionar passeios ao carrinho.")';
+            }
+
+        ?>*/
+    </script>
 </body>
 
 </html>

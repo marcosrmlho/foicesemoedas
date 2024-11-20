@@ -115,6 +115,16 @@ $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1
 </script>
 
 <script src="./../public/js/final.js"></script>
+
+<script>
+    <?php
+    if ($queryParameters["carrinho"] == "true"){
+        echo "alert('Adcionado ao carrinho com sucesso!')";
+    }
+    ?>
+</script>
+
+
 </body>
 
 </html>

@@ -26,6 +26,8 @@ $imgSource = $queryPasseio["imgSource"];
 $altImg = $queryPasseio["altImg"];
 $descricao = $queryPasseio["descricao"];
 
+session_start();
+
 echo "
 <!DOCTYPE html>
 
@@ -107,7 +109,9 @@ echo "
 
         
     </main>
-    
+    <script>
+        var cardDir = \"$cardDir\"
+    </script>
     <script src=\"../../../public/js/final.js\"></script>
     <script src=\"../../../public/js/passeio.js\"></script>
 </body>
