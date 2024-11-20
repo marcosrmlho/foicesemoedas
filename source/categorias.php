@@ -1,3 +1,9 @@
+<?php
+include '../enviroment.php';
+include '../banco/banco.php';
+include '../scripts/checkCarrinho.php'
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -25,7 +31,7 @@
             <nav class="menuNav">
                 <a href="./" class="linkNav">Home</a>
                 <a href="./categorias.php" class="linkNav">Categorias</a>
-                <a href="./carrinho.php" class="linkNav">Carrinho</a>
+                <a href="./carrinho.php" class="linkNav">Carrinho<?php echo $numItensCarrinho?></a>
                 <a href="./quemSomos.php" class="linkNav">Quem Somos</a>
                 <a href="./login.php" class="linkNav">Login</a>
             </nav>
@@ -49,7 +55,6 @@
         
     </main>
 
-    <script src="../public/js/final.js"></script>
 </body>
 
 </html>

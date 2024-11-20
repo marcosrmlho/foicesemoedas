@@ -1,6 +1,6 @@
 <?php
 include './../scripts/criarCards.php';
-
+include './../scripts/checkCarrinho.php';
 $voltar = $currentPage <= 0 ? 0 : $currentPage-1;
 
 $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1;
@@ -34,7 +34,7 @@ $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1
             <nav class="menuNav">
                 <a href="./" class="linkNav">Home</a>
                 <a href="./categorias.php" class="linkNav">Categorias</a>
-                <a href="./carrinho.php" class="linkNav">Carrinho</a>
+                <a href="./carrinho.php" class="linkNav">Carrinho<?php echo $numItensCarrinho?></a>
                 <a href="./quemSomos.php" class="linkNav">Quem Somos</a>
                 <a href="./login.php" class="linkNav">Login</a>
             </nav>

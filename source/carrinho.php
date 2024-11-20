@@ -1,3 +1,11 @@
+<?php
+include '../enviroment.php';
+include '../banco/banco.php';
+include '../scripts/checkCarrinho.php';
+include '../scripts/criarCardsCarrinho.php';
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -7,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamikaze Radical</title>
     <link rel="stylesheet" href="../public/css/index.css">
-    <link rel="stylesheet" href="../public/css/cards.css">
+    <link rel="stylesheet" href="../public/css/carrinho.css">
 </head>
 
 <body>
@@ -25,7 +33,7 @@
             <nav class="menuNav">
                 <a href="./" class="linkNav">Home</a>
                 <a href="./categorias.php" class="linkNav">Categorias</a>
-                <a href="./carrinho.php" class="linkNav">Carrinho</a>
+                <a href="./carrinho.php" class="linkNav">Carrinho<?php echo $numItensCarrinho?></a>
                 <a href="./quemSomos.php" class="linkNav">Quem Somos</a>
                 <a href="./login.php" class="linkNav">Login</a>
             </nav>
@@ -36,6 +44,26 @@
             <h1 class="inicio">
                 Carrinho
             </h1>
+
+            <div class="secao">
+                <div class="anuncio">
+                    <h2>
+                        <?php
+                        if ($numItensCarrinhoAux > 0){
+                            echo "Pacotes no seu carrinho:";
+                        }
+                        else{
+                            echo "Você não tem pacotes no seu carrinho.";
+                        }
+                        ?>
+                    </h2>
+                </div>
+
+                <div class="carrinho">
+                    <!-- fazer os cards deitados aqui pra ver como o layout vai ficar no para depois passar pra função "getCard()" do arquivo "criarCardsCarrinho.php"-->
+                </div>
+            </div>
+
         </section>
 
         <footer>
@@ -49,7 +77,6 @@
         
     </main>
 
-    <script src="../public/js/final.js"></script>
 </body>
 
 </html>

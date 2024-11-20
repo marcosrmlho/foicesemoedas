@@ -57,8 +57,7 @@ $passeiosArray = getPaginatedPasseiosDataFromDB($currentPage, $pageSize, $ordena
 
 $cardData = [];
 
-$passeiosTotais = $conn-> query("select count(*) as numPasseios from passeio;");
-$paginasTotais = $passeiosTotais->fetch_assoc();
+$paginasTotais = $conn-> query("select count(*) as numPasseios from passeio;")->fetch_assoc();
 $numPasseios = intval($paginasTotais["numPasseios"]);
 $paginasTotais = ceil($numPasseios/$pageSize);
 

@@ -3,6 +3,7 @@
 include '../../enviroment.php';
 include '../../banco/banco.php';
 include '../../scripts/funcoesUniversais.php';
+include '../../scripts/checkCarrinho.php';
 
 $cardDir = $queryParameters['cardDir'];
 $queryPasseio = $conn->query("select * from passeio where cardDir='$cardDir'")->fetch_assoc();
@@ -26,7 +27,6 @@ $imgSource = $queryPasseio["imgSource"];
 $altImg = $queryPasseio["altImg"];
 $descricao = $queryPasseio["descricao"];
 
-session_start();
 
 echo "
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ echo "
             <nav class=\"menuNav\">
                 <a href=\"./../../\" class=\"linkNav\">Home</a>
                 <a href=\"./../../categorias.php\" class=\"linkNav\">Categorias</a>
-                <a href=\"./../../carrinho.php\" class=\"linkNav\">Carrinho</a>
+                <a href=\"./../../carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
                 <a href=\"./../../quemSomos.php\" class=\"linkNav\">Quem Somos</a>
                 <a href=\"./../../login.php\" class=\"linkNav\">Login</a>
             </nav>
