@@ -34,7 +34,11 @@ create table if not exists Passeio(
 create table if not exists Usuario(
 	usuarioCPF char(11) primary key,
 	nome varchar(40) not null,
-	dataNasc date not null
+	dataNasc date not null,
+	usuarioEmail varchar(49) not null,
+	usuarioSenha varchar(20) not null,
+	usuarioTel char(11) not null,
+	usuarioTipo
 );
 	
 create table if not exists Guia(
