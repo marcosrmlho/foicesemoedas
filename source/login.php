@@ -50,6 +50,20 @@ echo "
             <h1 class=\"inicio\">
                 Login
             </h1>
+            <form>
+                <input type=\"text\" class=\"login\" id=\"nome\" placeholder=\"Nome\"><br>
+                <input type=\"text\" class=\"login\" id=\"usuarioCPF\" placeholder=\"CPF\"><br>
+                <input type=\"text\" class=\"login\" id=\"DDD\" placeholder=\"DDD\" size=\"1\">
+                <input type=\"text\" class=\"login\" id=\"UsuarioTel\" placeholder=\"Telefone\"><br>
+                <input type=\"text\" class=\"login\" id=\"usuarioEmail\" placeholder=\"Email\"><br>
+                <input type=\"text\" class=\"login\" id=\"usuarioSenha\" placeholder=\"Senha\">
+                <input type=\"text\" class=\"login\" id=\"usuarioSenhaConf\" placeholder=\"Confirmar senha\"><br>
+                <label>Quero:</label><br>
+                    <input type=\"radio\" class=\"login\" id=\"guia\" name=\"usuarioTipo\" value=\"Guia\">
+                    <label for=\"guia\">Criar Passeios</label><br>
+                    <input type=\"radio\" class=\"login\" id=\"cliente\" name=\"usuarioTipo\" value=\"Cliente\">
+                    <label for=\"cliente\">Ver Passeios</label><br>
+            </form>
         </section>
 
         <footer>
