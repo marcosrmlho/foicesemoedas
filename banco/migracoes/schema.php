@@ -30,7 +30,6 @@ create table if not exists Passeio(
 	cardDir varchar(20) not null,
 	descricao mediumtext null
 );
-
 create table if not exists Usuario(
 	usuarioCPF char(11) primary key,
 	nome varchar(40) not null,
@@ -38,20 +37,17 @@ create table if not exists Usuario(
 	usuarioEmail varchar(49) not null,
 	usuarioSenha varchar(20) not null,
 	usuarioTel char(11) not null,
-	usuarioTipo
-);
-	
+	usuarioTipo varchar(8) not null
+);	
 create table if not exists Guia(
 	guiaCPF char(11) primary key,
 	habilitacaoGuia char(14) not null,
 	foreign key (guiaCPF) references Usuario(usuarioCPF)
 );
-
 create table if not exists Cliente(
 	clienteCPF char(11) primary key,
 	foreign key (clienteCPF) references Usuario(usuarioCPF)
 );
-
 create table if not exists DadosCartao(
 	numero varchar(16) primary key,
 	CVV varchar(4) not null,
@@ -59,7 +55,6 @@ create table if not exists DadosCartao(
 	clienteCPF char(11) not null,
 	foreign key (clienteCPF) references Cliente(clienteCPF)
 );
-
 create table if not exists Comprar (
 	clienteCPF char(11),
 	idPasseio int(11),
@@ -68,7 +63,6 @@ create table if not exists Comprar (
 	foreign key (clienteCPF) references Cliente(clienteCPF),
 	foreign key (idPasseio) references Passeio(idPasseio)
 );
-
 create table if not exists Guiar(
 	guiaCPF char(11),
 	idPasseio int(11),
@@ -76,7 +70,6 @@ create table if not exists Guiar(
 	foreign key (guiaCPF) references Guia(guiaCPF),
 	foreign key (idPasseio) references Passeio(idPasseio)
 );
-
 create table if not exists Carrinho(
 	clienteCPF char(11) not null,
 	idPasseio int(11) not null,

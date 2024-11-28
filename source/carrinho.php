@@ -88,7 +88,10 @@ include '../scripts/criarCardsCarrinho.php';
 
         
     </main>
-
+    <script>
+        //var cardDir = "<?php //echo $cardDir?>" //aparentemente não tenho a variável do cardDir, mas vai ser fácil de conseguir, eu espero.
+    </script>
+    <script src="../public/js/carrinho.js"></script>
 </body>
 
 </html>

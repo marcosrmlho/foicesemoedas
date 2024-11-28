@@ -7,10 +7,16 @@ include '../scripts/checkCarrinho.php';
 
 $dirCar = "";
 $alertCar = "";
-if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false") {
+
+if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false" && !isset($_SESSION['clienteCPF'])) {
     $dirCar = "/..";
-    $alertCar = "<script>alert('Faça login para adcionar passeios ao carrinho.')</script>";
+    $alertCar = "<script>alert('Faça login para adicionar passeios ao carrinho.')</script>";
 }
+if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry" && !isset($_SESSION['clienteCPF'])) {
+    $dirCar = "/..";
+    $alertCar = "<script>alert('Faça login para acessar o carrinho.')</script>";
+}
+
 echo "
 <!DOCTYPE html>
 
