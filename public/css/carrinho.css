@@ -22,7 +22,7 @@
     height: auto;
     border-radius: 5px;
 }
-.retirarDoCarrinho{
+.retirarDoCarrinho {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,10 +33,18 @@
     width: 5%;
 }
 
-#dadosPasseio{
+#dadosPasseio {
     display: flex;
     height: 100%;
     width: 100%;
     align-items: center;
     gap: 20px;
+}
+.containerCard{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#carrinhoVazio{
+    align-self: center;
 }

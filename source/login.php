@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 include '../enviroment.php';
 include '../banco/banco.php';
@@ -27,16 +27,12 @@ echo "
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <title>Kamikaze Radical</title>
     <link rel=\"stylesheet\" href=\"..$dirCar/public/css/index.css\">
-    <link rel=\"stylesheet\" href=\"..$dirCar/public/css/cards.css\">
+    <link rel=\"stylesheet\" href=\"..$dirCar/public/css/login.css\">
 </head>
 
 <body>
-
     <main>
-
-
         <header>
-
             <div class=\"logo\">
                 <img src=\"./..$dirCar/public/imagens/designKamikaze.svg\" alt=\"Logomarca Kamikaze Radical\" height=\"200px\" width=\"200px\" id=\"design\">
                 <h1 class=\"nome\">Kamikaze Radical</h1>
@@ -56,19 +52,38 @@ echo "
             <h1 class=\"inicio\">
                 Login
             </h1>
-            <form>
-                <input type=\"text\" class=\"login\" id=\"nome\" placeholder=\"Nome\"><br>
-                <input type=\"text\" class=\"login\" id=\"usuarioCPF\" placeholder=\"CPF\"><br>
-                <input type=\"text\" class=\"login\" id=\"DDD\" placeholder=\"DDD\" size=\"1\">
-                <input type=\"text\" class=\"login\" id=\"UsuarioTel\" placeholder=\"Telefone\"><br>
-                <input type=\"text\" class=\"login\" id=\"usuarioEmail\" placeholder=\"Email\"><br>
-                <input type=\"text\" class=\"login\" id=\"usuarioSenha\" placeholder=\"Senha\">
-                <input type=\"text\" class=\"login\" id=\"usuarioSenhaConf\" placeholder=\"Confirmar senha\"><br>
-                <label>Quero:</label><br>
-                    <input type=\"radio\" class=\"login\" id=\"guia\" name=\"usuarioTipo\" value=\"Guia\">
-                    <label for=\"guia\">Criar Passeios</label><br>
-                    <input type=\"radio\" class=\"login\" id=\"cliente\" name=\"usuarioTipo\" value=\"Cliente\">
-                    <label for=\"cliente\">Ver Passeios</label><br>
+            <form class=\"loginSpace\" method=\"POST\">
+                <fieldset class=\"dadosUsuario\">
+                <legend>Insira seus dados:</legend>
+                
+                <input type=\"text\" class=\"login\" name=\"nome\" placeholder=\"Nome\" required>
+                <input type=\"text\" class=\"login\" name=\"usuarioCPF\" placeholder=\"CPF\" required>
+                
+                <input type=\"text\" class=\"login\" name=\"usuarioEmail\" placeholder=\"Email\" required>
+
+                <div>
+                    <input type=\"text\" class=\"login\" name=\"DDD\" placeholder=\"DDD\" size=\"1\" required>
+                    <input type=\"text\" class=\"login\" name=\"UsuarioTel\" placeholder=\"Telefone\" required>
+                </div>
+
+                <div>
+                    <input type=\"password\" class=\"login\" name=\"usuarioSenha\" placeholder=\"Senha\" required>
+                    <input type=\"password\" class=\"login\" name=\"usuarioSenhaConf\" placeholder=\"Confirmar senha\" required>
+                </div>
+                </fieldset>
+
+                <fieldset class=\"tipoUsuario\">
+                    <legend>Quero:</legend>
+                    <div>
+                        <input type=\"radio\" class=\"login\" id=\"guia\" name=\"usuarioTipo\" value=\"Guia\" required>
+                        <label for=\"guia\">Criar Passeios</label><br>
+                    </div>
+                    <div>
+                        <input type=\"radio\" class=\"login\" id=\"cliente\" name=\"usuarioTipo\" value=\"Cliente\" required>
+                        <label for=\"cliente\">Ver Passeios</label><br>
+                    </div>
+                </fieldset>
+                <input id=\"enviarDados\" type=\"submit\" value=\"Enviar\">
             </form>
         </section>
 
@@ -79,13 +94,10 @@ echo "
                 <a href=\"mailto:contato@kamikaze.com\" class=\"txtLink\">contato@kamikaze.com</a>
             </address>
         </footer>
-
-        
     </main>
     $alertCar
 </body>
 
 </html>
-"
+";
 ?>
-

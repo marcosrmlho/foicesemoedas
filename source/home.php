@@ -98,7 +98,7 @@ $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1
 
         <footer>
             <address>
-                R. Gen. Canabarro, 485 - Maracanã, Rio de Janeiro - RJ, 20271-204
+                <div>R. Gen. Canabarro, 485 - Maracanã, Rio de Janeiro - RJ, 20271-204</div>
                 <a href="tel:+5521912345678">Tel: (21) 91234-5678</a>
                 <a href="mailto:contato@kamikaze.com" class="txtLink">contato@kamikaze.com</a>
             </address>
