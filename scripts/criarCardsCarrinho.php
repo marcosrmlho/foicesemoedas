@@ -53,6 +53,7 @@ if (isset($_SESSION['clienteCPF'])){
 } else {
     $url = explode("/scripts", $_SERVER['REQUEST_URI'])[0];
     header("location: $url/../login.php/?carrinho=tryEntry");
+    exit();
 }
 
 ?>

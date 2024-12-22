@@ -10,6 +10,7 @@ $idPasseio = $conn->query("select idPasseio from passeio where cardDir = '$cardD
 
 if ($conn->query("delete from carrinho where idPasseio = '$idPasseio'")){
     header("location: $url/source/carrinho.php");
+    exit();
 }
 
 ?>

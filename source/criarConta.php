@@ -9,11 +9,15 @@ $dirCar = "";
 $alertCar = "";
 
 //checa se o usuario tá logado
-if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
+if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false" && !(isset($_POST['nome']) && isset($_POST['usuarioCPF']) && isset($_POST['usuarioCPF']) && isset($_POST['usuarioEmail'])
+&& isset($_POST['DDD']) && isset($_POST['usuarioTel']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf'])
+&& isset($_POST['usuarioTipo']) && !isset($_SESSION['clienteCPF']))) {
     $dirCar = "/..";
     $alertCar = "<script>alert('Faça login para adicionar passeios ao carrinho.')</script>";
 }
-if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
+if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry" && !(isset($_POST['nome']) && isset($_POST['usuarioCPF']) && isset($_POST['usuarioCPF']) && isset($_POST['usuarioEmail'])
+&& isset($_POST['DDD']) && isset($_POST['usuarioTel']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf'])
+&& isset($_POST['usuarioTipo']) && !isset($_SESSION['clienteCPF']))) {
     $dirCar = "/..";
     $alertCar = "<script>alert('Faça login para acessar o carrinho.')</script>";
 }
@@ -51,21 +55,21 @@ echo "
 
         <section>
             <h1 class=\"inicio\">
-                Login
+                Criar Conta
             </h1>
-            <form class=\"loginSpace\" method=\"POST\" action=\""?>
-<?php
-if ((isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false") or (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry")){
-echo "../../scripts/checkLogin.php\">";
-}
-else{
-echo "../scripts/checkLogin.php\">";
-}
-
-echo "<fieldset class=\"dadosUsuario\">
-                <legend>Faça o login:</legend>
-
+            <form class=\"loginSpace\" method=\"POST\" action=\"../scripts/addUsuario.php\">
+                <fieldset class=\"dadosUsuario\">
+                <legend>Insira seus dados:</legend>
+                
+                <input type=\"text\" class=\"login\" name=\"nome\" placeholder=\"Nome\" required>
+                <input type=\"text\" class=\"login\" name=\"usuarioCPF\" placeholder=\"CPF\" required>
+                
                 <input type=\"text\" class=\"login\" name=\"usuarioEmail\" placeholder=\"Email\" required>
+
+                <div>
+                    <input type=\"text\" class=\"login\" name=\"DDD\" placeholder=\"DDD\" size=\"1\" required>
+                    <input type=\"text\" class=\"login\" name=\"usuarioTel\" placeholder=\"Telefone\" required>
+                </div>
 
                 <div>
                     <input type=\"password\" class=\"login\" name=\"usuarioSenha\" placeholder=\"Senha\" required>
@@ -73,18 +77,18 @@ echo "<fieldset class=\"dadosUsuario\">
                 </div>
                 </fieldset>
 
+                <fieldset class=\"tipoUsuario\">
+                    <legend>Quero:</legend>
+                    <div>
+                        <input type=\"radio\" class=\"login\" id=\"guia\" name=\"usuarioTipo\" value=\"Guia\" required>
+                        <label for=\"guia\">Criar Passeios</label><br>
+                    </div>
+                    <div>
+                        <input type=\"radio\" class=\"login\" id=\"cliente\" name=\"usuarioTipo\" value=\"Cliente\" required>
+                        <label for=\"cliente\">Ver Passeios</label><br>
+                    </div>
+                </fieldset>
                 <input id=\"enviarDados\" type=\"submit\" value=\"Enviar\">
-                <p id=\"criarConta\">Não tem uma conta? <a href=\""?>
-
-<?php
-if ((isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false") or (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry")){
-echo "../criarConta.php\">";
-}
-else{
-echo "criarConta.php\">";
-}
-
-echo "Crie sua conta aqui!</a></p>
             </form>
         </section>
 
