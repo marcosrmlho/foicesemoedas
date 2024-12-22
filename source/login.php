@@ -6,15 +6,18 @@ include '../scripts/funcoesUniversais.php';
 include '../scripts/checkCarrinho.php';
 
 $dirCar = "";
+$dirCar2 = "";
 $alertCar = "";
 
 //checa se o usuario tá logado
 if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
     $dirCar = "/..";
+    $dirCar2 = "../";
     $alertCar = "<script>alert('Faça login para adicionar passeios ao carrinho.')</script>";
 }
 if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
     $dirCar = "/..";
+    $dirCar2 = "../";
     $alertCar = "<script>alert('Faça login para acessar o carrinho.')</script>";
 }
 
@@ -53,16 +56,8 @@ echo "
             <h1 class=\"inicio\">
                 Login
             </h1>
-            <form class=\"loginSpace\" method=\"POST\" action=\""?>
-<?php
-if ((isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false") or (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry")){
-echo "../../scripts/checkLogin.php\">";
-}
-else{
-echo "../scripts/checkLogin.php\">";
-}
-
-echo "<fieldset class=\"dadosUsuario\">
+            <form class=\"loginSpace\" method=\"POST\" action=\"$dirCar2../scripts/addUsuario.php\">
+                <fieldset class=\"dadosUsuario\">
                 <legend>Faça o login:</legend>
 
                 <input type=\"text\" class=\"login\" name=\"usuarioEmail\" placeholder=\"Email\" required>
