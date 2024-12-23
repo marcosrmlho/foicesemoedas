@@ -57,10 +57,11 @@ footer {
     box-sizing: border-box;
 }
 section {
-    display: block;
+    display: flex;
     background-color: #e6feff;
     padding: 15px;
     box-sizing: border-box;
+    flex-direction: column;
 }
 .inicio {
     font-size: 22pt;

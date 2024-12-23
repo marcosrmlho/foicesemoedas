@@ -56,6 +56,9 @@ if ($numItensCarrinhoAux > 0) {
     foreach ($cardData as $card) {
         echo $card;
     }
+    echo "<button class=\"botaoComprar\" onclick=\"window.location.href='" . $url . "/scripts/compraCarrinho.php'\">
+               Comprar
+          </button>";
 } else {
     echo "<p id=\"carrinhoVazio\">Seu carrinho está vazio.</p>";
 };
@@ -65,18 +68,19 @@ echo "</div>";
 
 <?php
 echo "
-                </div>
-            </div>
-        </section>
 
-        <footer>
-            <address>   
-                R. Gen. Canabarro, 485 - Maracanã, Rio de Janeiro - RJ, 20271-204
-                <a href=\"tel:+5521912345678\">Tel: (21) 91234-5678</a>
-                <a href=\"mailto:contato@kamikaze.com\" class=\"txtLink\">contato@kamikaze.com</a>
-            </address>
-        </footer>
-    </main>
-    </body>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <address>   
+            R. Gen. Canabarro, 485 - Maracanã, Rio de Janeiro - RJ, 20271-204
+            <a href=\"tel:+5521912345678\">Tel: (21) 91234-5678</a>
+            <a href=\"mailto:contato@kamikaze.com\" class=\"txtLink\">contato@kamikaze.com</a>
+        </address>
+    </footer>
+</main>
+</body>
 </html>"
 ?>

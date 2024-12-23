@@ -48,3 +48,12 @@
 #carrinhoVazio{
     align-self: center;
 }
+.botaoComprar {
+    align-self: center;
+    color: #000000;
+    border-radius: 4px;
+    background-color: #F4877A;
+    padding: 7px 12px;
+    margin: 30px 0px 10px 0px;
+    font-size: 16px;
+}

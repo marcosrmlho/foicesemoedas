@@ -8,7 +8,7 @@ include '../scripts/checkCarrinho.php';
 $dirCar = "";
 $alertCar = "";
 
-//checa se o usuario tá logado
+// Checa se o usuário está logado
 if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false" && !(isset($_POST['nome']) && isset($_POST['usuarioCPF']) && isset($_POST['usuarioCPF']) && isset($_POST['usuarioEmail'])
 && isset($_POST['DDD']) && isset($_POST['usuarioTel']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf'])
 && isset($_POST['usuarioTipo']) && !isset($_SESSION['clienteCPF']))) {
@@ -52,7 +52,6 @@ echo "
             </nav>
         </header>
 
-
         <section>
             <h1 class=\"inicio\">
                 Criar Conta
@@ -63,6 +62,7 @@ echo "
                 
                 <input type=\"text\" class=\"login\" name=\"nome\" placeholder=\"Nome\" required>
                 <input type=\"text\" class=\"login\" name=\"usuarioCPF\" placeholder=\"CPF\" required>
+                <input type=\"date\" class=\"login\" name=\"dataNasc\" placeholder=\"Data de Nascimento\" required>
                 
                 <input type=\"text\" class=\"login\" name=\"usuarioEmail\" placeholder=\"Email\" required>
 
@@ -78,15 +78,22 @@ echo "
                 </fieldset>
 
                 <fieldset class=\"tipoUsuario\">
-                    <legend>Quero:</legend>
+                    <legend>Sou um:</legend>
+
+                    <fieldset id=\"userGuia\">
+                        <legend>
+                            <label for=\"guia\">Guia Turístico:</label>
+                            <input type=\"radio\" class=\"login\" id=\"guia\" name=\"usuarioTipo\" value=\"Guia\" required>
+                        </legend>
+
+                        <input type=\"text\" class=\"login\" id=\"habilitacaoGuia\" name=\"habilitacaoGuia\" placeholder=\"Habilitação de Guia turístico\">
+                    </fieldset>
+
                     <div>
-                        <input type=\"radio\" class=\"login\" id=\"guia\" name=\"usuarioTipo\" value=\"Guia\" required>
-                        <label for=\"guia\">Criar Passeios</label><br>
-                    </div>
-                    <div>
+                        <label for=\"cliente\">Cliente:</label>
                         <input type=\"radio\" class=\"login\" id=\"cliente\" name=\"usuarioTipo\" value=\"Cliente\" required>
-                        <label for=\"cliente\">Ver Passeios</label><br>
                     </div>
+
                 </fieldset>
                 <input id=\"enviarDados\" type=\"submit\" value=\"Enviar\">
             </form>
@@ -101,6 +108,7 @@ echo "
         </footer>
     </main>
     $alertCar
+    <script src=\"../public/js/criarConta.js\"></script>
 </body>
 
 </html>
