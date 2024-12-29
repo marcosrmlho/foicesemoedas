@@ -64,7 +64,6 @@ echo "
 
                 <div>
                     <input type=\"password\" class=\"login\" name=\"usuarioSenha\" placeholder=\"Senha\" required>
-                    <input type=\"password\" class=\"login\" name=\"usuarioSenhaConf\" placeholder=\"Confirmar senha\" required>
                 </div>
                 </fieldset>
 
