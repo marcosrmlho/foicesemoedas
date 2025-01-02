@@ -1,0 +1,42 @@
+.criarPasseioNav{
+    color: #b62f20;
+}
+.formCriarPasseio{
+    display: flex;
+    flex-direction: column;
+}
+.dadosPasseio{
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.horariosPasseio, .informacoesPasseio, .imagemPasseio {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fdfafa;
+}
+
+#horaInicio,
+#dataInicio,
+#horaFinal,
+#dataFinal,
+#nome,
+#ranking,
+#valor,
+#descricao,
+#altImg {
+    border: 0;
+    border-radius: 5px;
+    padding: 3px;
+    appearance: none;
+    max-width: fit-content;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
+}
+
+#imgSource {
+    color: #042338;
+    background-color: #ffffff;
+}
