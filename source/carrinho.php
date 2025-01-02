@@ -56,7 +56,7 @@ if ($numItensCarrinhoAux > 0) {
     foreach ($cardData as $card) {
         echo $card;
     }
-    echo "<button class=\"botaoComprar\" onclick=\"window.location.href='" . $url . "/scripts/compraCarrinho.php'\">
+    echo "<button class=\"botaoComprar\" onclick=\"comprar(confirm('Realizar Compra?'));\">
                Comprar
           </button>";
 } else {
@@ -81,6 +81,27 @@ echo "
         </address>
     </footer>
 </main>
-</body>
-</html>"
+<script>
+
+function comprar(flag){
+
+if (flag) {
+    window.location.href='" . $url . "/scripts/compraCarrinho.php'
+};
+
+};
+
+</script>";
+
+if (isset($_SESSION['agradecimento']) && $_SESSION['agradecimento'] = 'Agradecemos pela Compra!'){
+    echo "
+    <script>
+        alert('Agradecemos pela Compra!')
+    </script>
+    ";
+    unset($_SESSION['agradecimento']);
+}
+
+echo "</body>
+</html>";
 ?>
