@@ -45,41 +45,53 @@ include '../scripts/checkCarrinho.php'
                 Criação de Passeio
             </h1>
             
-            <div class="secao">
-            <form action="./../scripts/criarPasseioBanco.php" method="POST" enctype="multipart/form-data" ="formCriarPasseio">
+            <div class="secao" id="secaoCriarPasseio">
+            <form action="./../scripts/criarPasseioBanco.php" method="POST" enctype="multipart/form-data" class="formCriarPasseio">
                 <fieldset class="dadosPasseio">
                     <legend>Dados do Passeio</legend>
 
                     <fieldset class="horariosPasseio">
                         <legend>Horários</legend>
-                        <input type="text" name="horaInicio" id="horaInicio" placeholder="Hora do Início">
-                        <input type="text" name="dataInicio" id="dataInicio" placeholder="Data do Início">
-                        <input type="text" name="horaFinal" id="horaFinal" placeholder="Hora do Término">
-                        <input type="text" name="dataFinal" id="dataFinal" placeholder="Hora do Término">
+                        <div class="hora">
+                            <label for="horaInicio">Hora do Início</label>
+                            <input type="time" name="horaInicio" id="horaInicio" required>
+                            <label for="horaTérmino">Hora do Término</label>
+                            <input type="time" name="horaFinal" id="horaFinal" required>
+                        </div>
+                        <div class="data">
+                            <label for="dataInicio">Data do Início:</label>
+                            <input type="date" name="dataInicio" id="dataInicio" required>
+                            <label for="dataFinal">Data do Término:</label>
+                            <input type="date" name="dataFinal" id="dataFinal" required>
+                        <div>
                     </fieldset>
                     
                     <fieldset class="informacoesPasseio">
                         <legend>Informações Principais</legend>
-                        <input type="text" name="nome" id="nome" placeholder="Nome do Passeio">
-                        <input type="text" name="ranking" id="ranking" placeholder="Ranking">
-                        <input type="text" name="valor" id="valor" placeholder="Valor">
-                        <input type="text" name="descricao" id="descricao" placeholder="Descrição">
+                            <input type="text" name="nome" id="nome" placeholder="Nome do Passeio" required>
+                            <input type="text" name="ranking" id="ranking" placeholder="Ranking" required>
+                            <input type="text" name="valor" id="valor" placeholder="Valor" required>
+                        <textarea name="descricao" id="descricao" placeholder="Descrição" required></textarea>
                     </fieldset>
 
                     <fieldset class="imagemPasseio">
                         <legend>Imagens</legend>
                         <div>
                             <label for="imgSource">Imagem do Passeio:</label>
-                            <input type="file" name="imgSource" id="imgSource">
+                            <input type="file" name="imgSource" id="imgSource" required>
                         </div>
-                        <input type="text" name="altImg" id="altImg" placeholder="Texto Alternativo">
+                        <input type="text" name="altImg" id="altImg" placeholder="Texto Alternativo" required>
                     </fieldset>
 
                 </fieldset>
-                
+                <div id="importante">
+                    <p id="textoImportante"><b>IMPORTANTE!</b> Ao criar um passeio, os direitos de imagem e edição relacionados tornam-se propriedades intelectuais do Grupo Kamikaze®.
+                    Decisão amparada pela Lei nº 9.610/1998, Lei nº 9.609/1998 e a Lei nº 13.709/2018</p>
+                </div>
                 <input type="submit" value="Criar Passeio" id="submitButton">
 
             </form>
+
             </div>
 
         </section>
@@ -98,5 +110,3 @@ include '../scripts/checkCarrinho.php'
 </body>
 
 </html>
-
-?>

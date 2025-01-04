@@ -1,40 +1,97 @@
 <?php
-// Exibir o conteúdo de $_POST
+
+include '../enviroment.php';
+include '../banco/banco.php';
+include '../scripts/funcoesUniversais.php';
+include '../scripts/checkCarrinho.php';
+
 var_dump($_POST);
-var_dump($_FILES);
 
-$url = explode("/scripts", $_SERVER['REQUEST_URI'])[0];
+$horaInicio = $_POST['horaInicio'];
+$horaFinal = $_POST['horaFinal'];
+$dataInicio = $_POST['dataInicio'];
+$dataFinal = $_POST['dataFinal'];
+$nome = $_POST['nome'];
+$ranking = $_POST['ranking'];
+$valor = $_POST['valor'];
+$descricao = $_POST['descricao'];
+$altImg = $_POST['altImg'];
 
-if ( isset( $_FILES[ 'imgSource' ][ 'name' ] ) && $_FILES[ 'imgSource' ][ 'error' ] == 0 ) {
-    echo 'Você enviou o arquivo: <strong>' . $_FILES[ 'imgSource' ][ 'name' ] . '</strong><br />';
-    echo 'Este arquivo é do tipo: <strong > ' . $_FILES[ 'imgSource' ][ 'type' ] . ' </strong ><br />';
-    echo 'Temporáriamente foi salvo em: <strong>' . $_FILES[ 'imgSource' ][ 'tmp_name' ] . '</strong><br />';
-    echo 'Seu tamanho é: <strong>' . $_FILES[ 'imgSource' ][ 'size' ] . '</strong> Bytes<br /><br />';
- 
-    $arquivo_tmp = $_FILES['imgSource']['tmp_name'];
-    $nome = $_FILES[ 'imgSource' ][ 'name' ];
- 
-    $extensao = pathinfo ( $nome, PATHINFO_EXTENSION );
- 
-    $extensao = strtolower ( $extensao );
+// Caminho absoluto para a pasta de upload na raiz do sistema
+$uploadDir = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'foicesemoedas' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'imagens' . DIRECTORY_SEPARATOR . 'imgPasseios';
 
-    if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
-
-        $novoNome = uniqid ( time () ) . '.' . $extensao;
- 
-        // Concatena a pasta com o nome
-        $destino = $url . 'public/imagens' . $novoNome;
-
-        // tenta mover o arquivo para o destino
-        if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
-            echo 'Arquivo salvo com sucesso em : <strong>' . $destino . '</strong><br />';
-            echo ' < img src = "' . $destino . '" />';
-        }
-        else
-            echo 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />';
+// Verificar se a pasta de destino existe, caso contrário, criar
+if (!file_exists($uploadDir)) {
+    if (!mkdir($uploadDir, 0775, true)) {
+        die('Erro ao criar a pasta de destino.');
     }
-    else
-        echo 'Você poderá enviar apenas arquivos "*.jpg;*.jpeg;*.gif;*.png"<br />';
 }
-else
-    echo 'Você não enviou nenhum arquivo!';
+
+// Verifica se há um arquivo enviado via FormData
+if (isset($_FILES['imgSource']) && $_FILES['imgSource']['error'] === UPLOAD_ERR_OK) {
+    // Obter informações do arquivo enviado
+    $arquivoTmp = $_FILES['imgSource']['tmp_name'];
+    $nomeOriginal = $_FILES['imgSource']['name'];
+    $tamanho = $_FILES['imgSource']['size'];
+    $tipo = $_FILES['imgSource']['type'];
+
+    // Validar extensão do arquivo
+    $extensao = strtolower(pathinfo($nomeOriginal, PATHINFO_EXTENSION));
+    $extensoesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
+
+    if (!in_array($extensao, $extensoesPermitidas)) {
+        die('Erro: Apenas arquivos .jpg, .jpeg, .png, .gif são permitidos.');
+    }
+
+    // Gerar um novo nome único para o arquivo
+    $novoNome = uniqid('img_', true) . '.' . $extensao;
+
+    // Caminho completo para salvar o arquivo
+    $caminhoDestino = $uploadDir . DIRECTORY_SEPARATOR . $novoNome;
+
+    // Movendo o arquivo para o destino final
+    if (move_uploaded_file($arquivoTmp, $caminhoDestino)) {
+        $imgSource = $novoNome;
+        $cardDir = explode("img_", $novoNome)[1];
+
+        $quantidadePasseios = intval($conn->query("SELECT COUNT(*) AS total FROM Passeio")->fetch_assoc()['total']) + 1;
+
+        // Usando consulta preparada
+        $stmt = $conn->prepare("INSERT INTO Passeio (
+            idPasseio, horaInicio, dataInicio, horaFinal, dataFinal, nome, ranking, valor, imgSource, altImg, cardDir, descricao
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        
+        $stmt->bind_param(
+            "isssssssssss",
+            $quantidadePasseios, // idPasseio
+            $horaInicio,         // horaInicio
+            $dataInicio,         // dataInicio
+            $horaFinal,          // horaFinal
+            $dataFinal,          // dataFinal
+            $nome,               // nome
+            $ranking,            // ranking
+            $valor,              // valor
+            $imgSource,          // imgSource
+            $altImg,             // altImg
+            $cardDir,            // cardDir
+            $descricao           // descricao
+        );
+
+        if ($stmt->execute()) {
+            echo "Passeio adicionado com sucesso!";
+        } else {
+            echo "Erro ao inserir passeio: " . $stmt->error;
+        }
+    } else {
+        echo json_encode([
+            'status' => 'erro',
+            'mensagem' => 'Erro ao salvar o arquivo no servidor.'
+        ]);
+    }
+} else {
+    echo json_encode([
+        'status' => 'erro',
+        'mensagem' => 'Nenhum arquivo foi enviado ou ocorreu um erro no upload.'
+    ]);
+}
+?>

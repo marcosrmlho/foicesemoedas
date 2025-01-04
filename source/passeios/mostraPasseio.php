@@ -85,7 +85,7 @@ echo "
                         </div>
 
                         <div class=\"imgContainer\">
-                            <img src=\"./../../../public/imagens/$imgSource\" alt=\"$altImg\" class=\"imgPasseio\">
+                            <img src=\"./../../../public/imagens/imgPasseios/$imgSource\" alt=\"$altImg\" class=\"imgPasseio\">
                         </div>
                     </div>
                 </div>

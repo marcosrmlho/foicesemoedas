@@ -13,7 +13,7 @@ if (isset($_SESSION['clienteCPF'])){
         $cardTemplate = "
         <div class=\"cardCarrinho\">
             <div id=\"dadosPasseio\" onclick=\"window.location.href='" . $url . "/source/passeios/mostraPasseio.php/?cardDir=" . $cardDir . "'\">" .
-                "<img src=\"../public/imagens/$imgSource\" alt=\"$altImg\" class=\"imgPasseio\">
+                "<img src=\"../public/imagens/imgPasseios/$imgSource\" alt=\"$altImg\" class=\"imgPasseio\">
                 <div class=\"nomeCard\">$nome</div>
                 <div>Valor:<b>$valor</b></div>
             </div>" . 
