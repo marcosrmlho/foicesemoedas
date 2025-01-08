@@ -37,7 +37,7 @@ create table if not exists Usuario(
 	usuarioEmail varchar(49) not null,
 	usuarioSenha varchar(20) not null,
 	usuarioTel char(11) not null,
-	usuarioTipo varchar(8) not null
+	usuarioTipo varchar(8)
 );	
 create table if not exists Guia(
 	guiaCPF char(11) primary key,
