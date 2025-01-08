@@ -12,11 +12,15 @@
 }
 
 .login {
+    border: 0;
     border-radius: 5px;
     border-color: #bbbbbb;
     padding: 4px;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
 }
-
+#guia, #cliente{
+    box-shadow: 0px 0px 0px;
+}
 .dadosUsuario{
     display: flex;
     justify-content: center;

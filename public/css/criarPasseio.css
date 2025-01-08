@@ -1,0 +1,81 @@
+.criarPasseioNav{
+    color: #b62f20;
+}
+.formCriarPasseio{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.dadosPasseio{
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.horariosPasseio, .imagemPasseio {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fdfafa;
+}
+
+.informacoesPasseio{
+    display: flex;
+    justify-content: space-around;
+    background-color: #fdfafa;
+    gap: 10px;
+}
+
+#horaInicio,
+#dataInicio,
+#horaFinal,
+#dataFinal,
+#nome,
+#ranking,
+#valor,
+#descricao,
+#altImg {
+    border: 0;
+    border-radius: 5px;
+    padding: 3px;
+    appearance: none;
+    max-width: fit-content;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
+}
+
+#imgSource {
+    color: #042338;
+    background-color: #ffffff;
+}
+.data, .hora{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+textarea{
+    resize: none;
+    font-family: "DM Sans", sans-serif;
+}
+input{
+    font-family: "DM Sans", sans-serif;
+}
+#submitButton{
+    appearance: none;
+    align-self: center;
+    border-radius: 4px;
+    border:0;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
+    background-color: #F4877A;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+}
+#importante{
+    align-self: center;
+    max-width: fit-content;
+}
+#textoImportante{
+    font-size: x-small;
+    text-align: center;
+}

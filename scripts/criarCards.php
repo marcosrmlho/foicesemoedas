@@ -7,7 +7,7 @@ function getCard($imgSource, $altImg, $nome, $zIndex, $ranking, $cardDir) {
     $cardTemplate = "
         <div class=\"cardWrapper\" style=\"z-index: $zIndex;\" onclick=\"window.location='./passeios/mostraPasseio.php/?cardDir=$cardDir';\">
             <div class=\"card\">
-                <img src=\"../public/imagens/$imgSource\" alt=\"$altImg\">
+                <img src=\"../public/imagens/imgPasseios/$imgSource\" alt=\"$altImg\">
                 <div class=\"cardDescricao\">
                     <div class=\"descricao\">
                         $nome
