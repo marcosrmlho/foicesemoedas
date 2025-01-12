@@ -48,28 +48,15 @@ create table if not exists Cliente(
 	clienteCPF char(11) primary key,
 	foreign key (clienteCPF) references Usuario(usuarioCPF)
 );
-create table if not exists DadosCartao(
-	numero varchar(16) primary key,
-	CVV varchar(4) not null,
-	agencia varchar(5) not null,
-	clienteCPF char(11) not null,
-	foreign key (clienteCPF) references Cliente(clienteCPF)
-);
+
 create table if not exists Comprar (
 	clienteCPF char(11),
 	idPasseio int(11),
 	dataCompra date not null,
-	tipoPagamento varchar(7) not null,
 	foreign key (clienteCPF) references Cliente(clienteCPF),
 	foreign key (idPasseio) references Passeio(idPasseio)
 );
-create table if not exists Guiar(
-	guiaCPF char(11),
-	idPasseio int(11),
-	primary key(guiaCPF, idPasseio),
-	foreign key (guiaCPF) references Guia(guiaCPF),
-	foreign key (idPasseio) references Passeio(idPasseio)
-);
+
 create table if not exists Carrinho(
 	clienteCPF char(11) not null,
 	idPasseio int(11) not null,
