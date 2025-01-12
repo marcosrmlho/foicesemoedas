@@ -6,8 +6,6 @@ session_start();
 
 $url = explode("/scripts", $_SERVER['REQUEST_URI'])[0];
 
-$_SESSION['clienteCPF'] = '12345678900';
-
 $cardDir = $queryParameters['cardDir'];
 $log = false;
 

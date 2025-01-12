@@ -1,5 +1,4 @@
 <?php
-include 'C:\xampp\htdocs\TrabalhoFinal2\foicesemoedas\enviroment.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -1,6 +1,7 @@
 <?php
 include './../scripts/criarCards.php';
 include './../scripts/checkCarrinho.php';
+
 $voltar = $currentPage <= 0 ? 0 : $currentPage-1;
 
 $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1;
@@ -17,28 +18,66 @@ $frente = $currentPage >= $paginasTotais-1 ? $paginasTotais-1 : $currentPage + 1
     <title>Kamikaze Radical</title>
     <link rel="stylesheet" href="../public/css/index.css">
     <link rel="stylesheet" href="../public/css/cards.css">
+    <link rel="stylesheet" href="../public/css/criarPasseioNav.css">
 </head>
 
 <body>
 
     <main>
 
+<?php
+if (isset($_SESSION['clienteCPF'])){
+    echo "<header>
 
-        <header>
+        <div class=\"logo\">
+            <img src=\"./../public/imagens/designKamikaze.svg\" alt=\"Logomarca Kamikaze Radical\" height=\"200px\" width=\"200px\" id=\"design\">
+            <h1 class=\"nome\">Kamikaze Radical</h1>
+        </div>
+        
+        <nav class=\"menuNav\">
+            <a href=\"./\" class=\"linkNav\">Home</a>
+            <a href=\"./categorias.php\" class=\"linkNav\">Categorias</a>
+            <a href=\"./carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
+            <a href=\"./quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+            <a href=\"./../scripts/sair.php\" class=\"linkNav\">Sair</a>
+        </nav>
+        </header>";
+} else if (isset($_SESSION['guiaCPF'])){
+    echo "<header>
 
-            <div class="logo">
-                <img src="./../public/imagens/designKamikaze.svg" alt="Logomarca Kamikaze Radical" height="200px" width="200px" id="design">
-                <h1 class="nome">Kamikaze Radical</h1>
-            </div>
+        <div class=\"logo\">
+            <img src=\"./../public/imagens/designKamikaze.svg\" alt=\"Logomarca Kamikaze Radical\" height=\"200px\" width=\"200px\" id=\"design\">
+            <h1 class=\"nome\">Kamikaze Radical</h1>
+        </div>
+        
+        <nav class=\"menuNav\">
+            <a href=\"./\" class=\"linkNav\">Home</a>
+            <a href=\"./categorias.php\" class=\"linkNav\">Categorias</a>
+            <a href=\"./carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
+            <a href=\"./criarPasseio.php\" class=\"criarPasseioNav\">Criar Passeio</a>
+            <a href=\"./quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+            <a href=\"./../scripts/sair.php\" class=\"linkNav\">Sair</a>
+        </nav>
+        </header>";
+} else {
+    echo "<header>
 
-            <nav class="menuNav">
-                <a href="./" class="linkNav">Home</a>
-                <a href="./categorias.php" class="linkNav">Categorias</a>
-                <a href="./carrinho.php" class="linkNav">Carrinho<?php echo $numItensCarrinho?></a>
-                <a href="./quemSomos.php" class="linkNav">Quem Somos</a>
-                <a href="./login.php" class="linkNav">Login</a>
-            </nav>
-        </header>
+        <div class=\"logo\">
+            <img src=\"./../public/imagens/designKamikaze.svg\" alt=\"Logomarca Kamikaze Radical\" height=\"200px\" width=\"200px\" id=\"design\">
+            <h1 class=\"nome\">Kamikaze Radical</h1>
+        </div>
+
+        <nav class=\"menuNav\">
+            <a href=\"./\" class=\"linkNav\">Home</a>
+            <a href=\"./categorias.php\" class=\"linkNav\">Categorias</a>
+            <a href=\"./carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
+            <a href=\"./quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+            <a href=\"./login.php\" class=\"linkNav\">Login</a>
+        </nav>
+        </header>";
+}
+?>
+
         <section>
 
                 <h1 class="inicio">

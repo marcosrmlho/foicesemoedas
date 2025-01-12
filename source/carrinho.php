@@ -19,24 +19,63 @@ echo "
     <title>Kamikaze Radical</title>
     <link rel=\"stylesheet\" href=\"../public/css/index.css\">
     <link rel=\"stylesheet\" href=\"../public/css/carrinho.css\">
+    <link rel=\"stylesheet\" href=\"../public/css/criarPasseioNav.css\">
 </head>
 <body>
-    <main>
-        <header>
+    <main>";
+
+    if (isset($_SESSION['clienteCPF'])){
+        echo "<header>
+    
             <div class=\"logo\">
                 <img src=\"./../public/imagens/designKamikaze.svg\" alt=\"Logomarca Kamikaze Radical\" height=\"200px\" width=\"200px\" id=\"design\">
                 <h1 class=\"nome\">Kamikaze Radical</h1>
             </div>
+            
             <nav class=\"menuNav\">
                 <a href=\"./\" class=\"linkNav\">Home</a>
                 <a href=\"./categorias.php\" class=\"linkNav\">Categorias</a>
-                <a href=\"./carrinho.php\" class=\"linkNav\">Carrinho $numItensCarrinho</a>
+                <a href=\"./carrinho.php\" class=\"linkNav\">Carrinho<?php echo $numItensCarrinho?></a>
+                <a href=\"./quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+                <a href=\"./../scripts/sair.php\" class=\"linkNav\">Sair</a>
+            </nav>
+            </header>";
+    } else if (isset($_SESSION['guiaCPF'])){
+        echo "<header>
+    
+            <div class=\"logo\">
+                <img src=\"./../public/imagens/designKamikaze.svg\" alt=\"Logomarca Kamikaze Radical\" height=\"200px\" width=\"200px\" id=\"design\">
+                <h1 class=\"nome\">Kamikaze Radical</h1>
+            </div>
+            
+            <nav class=\"menuNav\">
+                <a href=\"./\" class=\"linkNav\">Home</a>
+                <a href=\"./categorias.php\" class=\"linkNav\">Categorias</a>
+                <a href=\"./carrinho.php\" class=\"linkNav\">Carrinho<?php echo $numItensCarrinho?></a>
+                <a href=\"./criarPasseio.php\" class=\"linkNav\">Criar Passeio</a>
+                <a href=\"./quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+                <a href=\"./../scripts/sair.php\" class=\"linkNav\">Sair</a>
+            </nav>
+            </header>";
+    } else {
+        echo "<header>
+    
+            <div class=\"logo\">
+                <img src=\"./../public/imagens/designKamikaze.svg\" alt=\"Logomarca Kamikaze Radical\" height=\"200px\" width=\"200px\" id=\"design\">
+                <h1 class=\"nome\">Kamikaze Radical</h1>
+            </div>
+    
+            <nav class=\"menuNav\">
+                <a href=\"./\" class=\"linkNav\">Home</a>
+                <a href=\"./categorias.php\" class=\"linkNav\">Categorias</a>
+                <a href=\"./carrinho.php\" class=\"linkNav\">Carrinho<?php echo $numItensCarrinho?></a>
                 <a href=\"./quemSomos.php\" class=\"linkNav\">Quem Somos</a>
                 <a href=\"./login.php\" class=\"linkNav\">Login</a>
             </nav>
-        </header>
+            </header>";
+    };
 
-        <section>
+echo "<section>
             <h1 class=\"inicio\">
                 Carrinho
             </h1>

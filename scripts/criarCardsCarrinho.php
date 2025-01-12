@@ -50,6 +50,10 @@ if (isset($_SESSION['clienteCPF'])){
         array_push($cardData, getCard($card['imgSource'], $card['altImg'], $card['nome'], $zIndex--, $card['ranking'], $card['cardDir'], $card['valor']));
     }
 
+} else if (isset($_SESSION['guiaCPF'])){
+    $url = explode("/scripts", $_SERVER['REQUEST_URI'])[0];
+    header("location: $url/../login.php/?carrinho=guia");
+    exit();
 } else {
     $url = explode("/scripts", $_SERVER['REQUEST_URI'])[0];
     header("location: $url/../login.php/?carrinho=tryEntry");

@@ -34,10 +34,10 @@ create table if not exists Usuario(
 	usuarioCPF char(11) primary key,
 	nome varchar(40) not null,
 	dataNasc date not null,
-	usuarioEmail varchar(49) not null,
-	usuarioSenha varchar(20) not null,
+	usuarioEmail varchar(49) not null unique,
+	usuarioSenha varchar(64) not null,
 	usuarioTel char(11) not null,
-	usuarioTipo varchar(8)
+	usuarioTipo varchar(8) not null
 );	
 create table if not exists Guia(
 	guiaCPF char(11) primary key,
