@@ -16,6 +16,7 @@ include '../scripts/checkCarrinho.php';
     <link rel="stylesheet" href="../public/css/index.css">
     <link rel="stylesheet" href="../public/css/cards.css">
     <link rel="stylesheet" href="../public/css/criarPasseioNav.css">
+    <link rel="stylesheet" href="../public/css/categorias.css">
 </head>
 
 <body>
@@ -75,19 +76,49 @@ if (isset($_SESSION['clienteCPF'])){
         </header>";
 }
 ?>
+<?php
 
-
-        <section>
-            <h1 class="inicio">
+echo    "<section>
+            <h1 class=\"inicio\">
                 Categorias
             </h1>
-        </section>
+            <fieldset class=\"categorias\">
+            <form class=\"selecao\" method=\"post\" action=\"../scripts/filtrarCategorias.php\">
+            <fieldset class=\"subCategoria\">
+            <legend>Preço</legend>
+            <input type=\"number\" name=\"minPreco\" placeholder=\"Min\" min=\"0\">
+            <input type=\"number\" name=\"maxPreco\" placeholder=\"Max\">
+            </fieldset>
+            <fieldset class=\"subCategoria\">
+            <legend>Ranking</legend>
+            <input type=\"number\" name=\"minRanking\" placeholder=\"Min\">
+            <input type=\"number\" name=\"maxRanking\" placeholder=\"Max\">
+            </fieldset>
+            <fieldset class=\"subCategoria\">
+            <legend>Data</legend>
+            <label>De:</label>
+            <input type=\"date\" name=\"minData\" placeholder=\"Min\">
+            <label>Até:</lable>
+            <input type=\"date\" name=\"maxData\" placeholder=\"Max\">
+            </fieldset>
+            <fieldset class=\"subCategoria\">
+            <legend>Palavras Chaves</legend>
+            <input type=\"text\" name=\"palavraChave\" placeholder=\"Digite Aqui\">
+            </fieldset>
+            </form>
+            </fieldset>
 
+            <fieldset class=\"pacotes\">
+                <legend>Pacotes</legend>
+                
+            </fieldset>
+        </section>
+        
         <footer>
             <address>   
                 R. Gen. Canabarro, 485 - Maracanã, Rio de Janeiro - RJ, 20271-204
-                <a href="tel:+5521912345678">Tel: (21) 91234-5678</a>
-                <a href="mailto:contato@kamikaze.com" class="txtLink">contato@kamikaze.com</a>
+                <a href=\"tel:+5521912345678\">Tel: (21) 91234-5678</a>
+                <a href=\"mailto:contato@kamikaze.com\" class=\"txtLink\">contato@kamikaze.com</a>
             </address>
         </footer>
 
@@ -96,4 +127,5 @@ if (isset($_SESSION['clienteCPF'])){
 
 </body>
 
-</html>
+</html>"
+?>
