@@ -82,7 +82,7 @@ echo    "<section>
             <h1 class=\"inicio\">
                 Categorias
             </h1>
-            <fieldset class=\"categorias\">
+            <div class=\"categorias\">
             <form class=\"selecao\" method=\"post\" action=\"../scripts/filtrarCategorias.php\">
             <fieldset class=\"subCategoria\">
             <legend>Preço</legend>
@@ -105,8 +105,9 @@ echo    "<section>
             <legend>Palavras Chaves</legend>
             <input type=\"text\" name=\"palavraChave\" placeholder=\"Digite Aqui\">
             </fieldset>
+            <input type=\"submit\" value=\"Filtrar\">
             </form>
-            </fieldset>
+            </div>
 
             <fieldset class=\"pacotes\">
                 <legend>Pacotes</legend>
