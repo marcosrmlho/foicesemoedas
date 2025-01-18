@@ -116,7 +116,7 @@ echo "<section>
                 <p id=\"criarConta\">Não tem uma conta? <a href=\""?>
 
 <?php
-if ((isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false") or (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry")){
+if ((isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false") or (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry") or (isset($queryParameters['login']) && $queryParameters['login'] == "erroEmailSenha")){
 echo "../criarConta.php\">";
 }
 else{

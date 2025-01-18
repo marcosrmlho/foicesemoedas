@@ -5,8 +5,6 @@ include '../banco/banco.php';
 include '../scripts/funcoesUniversais.php';
 include '../scripts/checkCarrinho.php';
 
-var_dump($_POST);
-
 $horaInicio = $_POST['horaInicio'];
 $horaFinal = $_POST['horaFinal'];
 $dataInicio = $_POST['dataInicio'];
@@ -63,22 +61,23 @@ if (isset($_FILES['imgSource']) && $_FILES['imgSource']['error'] === UPLOAD_ERR_
         
         $stmt->bind_param(
             "isssssssssss",
-            $quantidadePasseios, // idPasseio
-            $horaInicio,         // horaInicio
-            $dataInicio,         // dataInicio
-            $horaFinal,          // horaFinal
-            $dataFinal,          // dataFinal
-            $nome,               // nome
-            $ranking,            // ranking
-            $valor,              // valor
-            $imgSource,          // imgSource
-            $altImg,             // altImg
-            $cardDir,            // cardDir
-            $descricao           // descricao
+            $quantidadePasseios, 
+            $horaInicio,         
+            $dataInicio,         
+            $horaFinal,          
+            $dataFinal,          
+            $nome,               
+            $ranking,            
+            $valor,              
+            $imgSource,          
+            $altImg,             
+            $cardDir,            
+            $descricao           
         );
 
         if ($stmt->execute()) {
-            echo "Passeio adicionado com sucesso!";
+            header("location: ../source/home.php");
+            exit();
         } else {
             echo "Erro ao inserir passeio: " . $stmt->error;
         }
