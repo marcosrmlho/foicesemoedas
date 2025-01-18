@@ -4,11 +4,10 @@ include './../banco/banco.php';
 include 'funcoesUniversais.php';
 
 $url = explode("/scripts", $_SERVER['REQUEST_URI'])[0];
-$cardDir = $queryParameters["cardDir"];
+$idCarrinho = $queryParameters["idCarrinho"];
 
-$idPasseio = $conn->query("select idPasseio from passeio where cardDir = '$cardDir'")->fetch_assoc()["idPasseio"];
-
-if ($conn->query("delete from carrinho where idPasseio = '$idPasseio'")){
+if ($conn->query("delete from carrinho where idCarrinho = '$idCarrinho'")){
+    echo "oi";
     header("location: $url/source/carrinho.php");
     exit();
 }

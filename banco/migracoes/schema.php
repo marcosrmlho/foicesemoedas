@@ -50,6 +50,7 @@ create table if not exists Cliente(
 );
 
 create table if not exists Comprar (
+	idComprar bigInt primary key AUTO_INCREMENT,
 	clienteCPF char(11),
 	idPasseio int(11),
 	dataCompra date not null,
@@ -58,9 +59,9 @@ create table if not exists Comprar (
 );
 
 create table if not exists Carrinho(
+	idCarrinho bigInt primary key AUTO_INCREMENT,
 	clienteCPF char(11) not null,
 	idPasseio int(11) not null,
-	primary key(clienteCPF, idPasseio),
 	foreign key (clienteCPF) references Cliente(clienteCPF),
 	foreign key (idPasseio) references Passeio(idPasseio)
 )

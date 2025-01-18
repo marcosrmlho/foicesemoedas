@@ -59,7 +59,7 @@ echo "
                 <a href=\"./../../categorias.php\" class=\"linkNav\">Categorias</a>
                 <a href=\"./../../carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
                 <a href=\"./../../quemSomos.php\" class=\"linkNav\">Quem Somos</a>
-                <a href=\"./historico.php\" class=\"linkNav\">Histórico</a>
+                <a href=\"./../../historico.php\" class=\"linkNav\">Histórico</a>
                 <a href=\"./../../../scripts/sair.php\" class=\"linkNav\">Sair</a>
             </nav>
             </header>";
@@ -130,7 +130,7 @@ echo "<section class=\"sectionPasseio\">
                     <div class=\"preco\"><p>Preço: <b>R$ $valor</b></p></div>
                     <p>Hora e data de início do passeio: às <b>$horaInicio</b> do dia <b>$dataInicio</b></p>
                     <p>Hora e data de encerramento do passeio: às <b>$horaFinal</b> do dia <b>$dataFinal</b></p>
-                    <button id=\"addCarrinho\">Adcionar ao Carrinho</button>
+                    <button id=\"addCarrinho\">Adicionar ao Carrinho</button>
                 </div>
 
         </section>

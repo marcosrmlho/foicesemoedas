@@ -13,7 +13,7 @@ $numPasseiosCarrinho = $passeiosCarrinho -> num_rows;
 
 for($i = 0; $i < $numPasseiosCarrinho; $i++){
     $idPass = ($passeiosCarrinho -> fetch_assoc())['idPasseio'];
-    if ($conn -> query("insert into Comprar values ('$cpfCliente', $idPass, '$dataAtual')")){
+    if ($conn -> query("insert into Comprar (clienteCPF, idPasseio, dataCompra) values ('$cpfCliente', $idPass, '$dataAtual')")){
     };
 };
 

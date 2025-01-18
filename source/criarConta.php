@@ -100,7 +100,7 @@ echo "<section>
             <h1 class=\"inicio\">
                 Criar Conta
             </h1>
-            <form class=\"loginSpace\" method=\"POST\" action=\"../scripts/addUsuario.php\">
+            <form class=\"loginSpace\" method=\"POST\" action=\"..$dirCar/scripts/addUsuario.php\">
                 <fieldset class=\"dadosUsuario\">
                 <legend>Insira seus dados:</legend>
                 
