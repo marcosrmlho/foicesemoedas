@@ -129,7 +129,7 @@ echo "<section class=\"sectionPasseio\">
                     <div class=\"preco\"><p>Preço: <b>R$ $valor</b></p></div>
                     <p>Hora e data de início do passeio: às <b>$horaInicio</b> do dia <b>$dataInicio</b></p>
                     <p>Hora e data de encerramento do passeio: às <b>$horaFinal</b> do dia <b>$dataFinal</b></p>
-                    <button id=\"addCarrinho\">Adicionar ao Carrinho</button>
+                    <button id=\"addCarrinho\">Adcionar ao Carrinho</button>
                 </div>
 
         </section>

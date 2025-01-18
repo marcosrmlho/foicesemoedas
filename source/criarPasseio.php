@@ -103,8 +103,8 @@ if (isset($_SESSION['clienteCPF'])){
                     <fieldset class="informacoesPasseio">
                         <legend>Informações Principais</legend>
                             <input type="text" name="nome" id="nome" placeholder="Nome do Passeio" required>
-                            <input type="text" name="ranking" id="ranking" placeholder="Ranking" required>
-                            <input type="text" name="valor" id="valor" placeholder="Valor" required>
+                            <input type="text" name="ranking" id="ranking" placeholder="Ranking" required min="0" max="10">
+                            <input type="text" name="valor" id="valor" placeholder="Valor" required min="0">
                         <textarea name="descricao" id="descricao" placeholder="Descrição" required></textarea>
                     </fieldset>
 

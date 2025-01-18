@@ -3,5 +3,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-
+fieldset.categorias{
+  background-color: #ffffff;
+}
+fieldset.subCategoria{
+  background-color: #fdfafa;
+}

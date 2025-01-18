@@ -18,6 +18,7 @@ $altImg = $_POST['altImg'];
 // Caminho absoluto para a pasta de upload na raiz do sistema
 $uploadDir = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'foicesemoedas' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'imagens' . DIRECTORY_SEPARATOR . 'imgPasseios';
 
+
 // Verificar se a pasta de destino existe, caso contrário, criar
 if (!file_exists($uploadDir)) {
     if (!mkdir($uploadDir, 0775, true)) {

@@ -2,7 +2,7 @@
 include '../enviroment.php';
 include '../banco/banco.php';
 include '../scripts/checkCarrinho.php';
-include '../scripts/criarCards.php'
+include '../scripts/filtrarCategorias2.php'
 ?>
 
 <!DOCTYPE html>
@@ -83,30 +83,34 @@ echo    "<section>
                 Categorias
             </h1>
             <fieldset class=\"categorias\">
-            <form class=\"selecao\" method=\"post\" action=\"../source/categorias2.php\">
-            <fieldset class=\"subCategoria\">
-            <legend>Preço</legend>
-            <input type=\"number\" name=\"minPreco\" placeholder=\"Min\" min=\"0\">
-            <input type=\"number\" name=\"maxPreco\" placeholder=\"Max\">
-            </fieldset>
-            <fieldset class=\"subCategoria\">
-            <legend>Ranking</legend>
-            <input type=\"number\" name=\"minRanking\" placeholder=\"Min\">
-            <input type=\"number\" name=\"maxRanking\" placeholder=\"Max\">
-            </fieldset>
-            <fieldset class=\"subCategoria\">
-            <legend>Data</legend>
-            <label>De:</label>
-            <input type=\"date\" name=\"minData\" placeholder=\"Min\">
-            <label>Até:</lable>
-            <input type=\"date\" name=\"maxData\" placeholder=\"Max\">
-            </fieldset>
-            <fieldset class=\"subCategoria\">
-            <legend>Palavras Chaves</legend>
-            <input type=\"text\" name=\"palavraChave\" placeholder=\"Digite Aqui\">
-            </fieldset>
-            <input type=\"submit\" value=\"Filtrar\">
-            </form>
+                <form class=\"selecao\" method=\"post\" action=\"../source/categorias2.php\">
+                    <fieldset class=\"subCategoria\">
+                        <legend>Preço</legend>
+                        <input type=\"number\" name=\"minPreco\" placeholder=\"Min\" min=\"0\">
+                        <input type=\"number\" name=\"maxPreco\" placeholder=\"Max\" min=\"0\">
+                    </fieldset>
+
+                    <fieldset class=\"subCategoria\">
+                        <legend>Ranking</legend>
+                        <input type=\"number\" name=\"minRanking\" placeholder=\"Min\" min=\"0\" max=\"10\">
+                        <input type=\"number\" name=\"maxRanking\" placeholder=\"Max\" min=\"0\" max=\"10\">
+                    </fieldset>
+
+                    <fieldset class=\"subCategoria\">
+                        <legend>Data</legend>
+                        <label>De:</label>
+                        <input type=\"date\" name=\"minData\" placeholder=\"Min\">
+                        <label>Até:</lable>
+                        <input type=\"date\" name=\"maxData\" placeholder=\"Max\">
+                    </fieldset>
+
+                    <fieldset class=\"subCategoria\">
+                        <legend>Palavras Chaves</legend>
+                        <input type=\"text\" name=\"palavraChave\" placeholder=\"Digite Aqui\">
+                    </fieldset>
+
+                    <input type=\"submit\" value=\"Filtrar\">
+                </form>
             </fieldset><br>
 
             <div class=\"secao\">
@@ -117,7 +121,6 @@ echo    "<section>
                 </div>
 
                 <div class=\"maisComprados\">";
-
                 if ($numPasseios == 0){
                     echo "<h2>Nenhum pacote com os filtros selecionados.</h2>";
                 } else {
@@ -125,8 +128,7 @@ echo    "<section>
                         echo $card;
                     };
                 };
-
-            echo    "</div>
+            echo "</div>
         </section>
         
         <footer>
