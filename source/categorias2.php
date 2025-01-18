@@ -38,6 +38,7 @@ if (isset($_SESSION['clienteCPF'])){
             <a href=\"./categorias.php\" class=\"linkNav\">Categorias</a>
             <a href=\"./carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
             <a href=\"./quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+            <a href=\"./historico.php\" class=\"linkNav\">Histórico</a>
             <a href=\"./../scripts/sair.php\" class=\"linkNav\">Sair</a>
         </nav>
         </header>";
@@ -82,38 +83,46 @@ echo    "<section>
             <h1 class=\"inicio\">
                 Categorias
             </h1>
-            <fieldset class=\"categorias\">
-                <form class=\"selecao\" method=\"post\" action=\"../source/categorias2.php\">
-                    <fieldset class=\"subCategoria\">
-                        <legend>Preço</legend>
-                        <input type=\"number\" name=\"minPreco\" placeholder=\"Min\" min=\"0\">
-                        <input type=\"number\" name=\"maxPreco\" placeholder=\"Max\" min=\"0\">
-                    </fieldset>
 
-                    <fieldset class=\"subCategoria\">
-                        <legend>Ranking</legend>
-                        <input type=\"number\" name=\"minRanking\" placeholder=\"Min\" min=\"0\" max=\"10\">
-                        <input type=\"number\" name=\"maxRanking\" placeholder=\"Max\" min=\"0\" max=\"10\">
-                    </fieldset>
-
-                    <fieldset class=\"subCategoria\">
-                        <legend>Data</legend>
-                        <label>De:</label>
-                        <input type=\"date\" name=\"minData\" placeholder=\"Min\">
-                        <label>Até:</lable>
-                        <input type=\"date\" name=\"maxData\" placeholder=\"Max\">
-                    </fieldset>
-
-                    <fieldset class=\"subCategoria\">
-                        <legend>Palavras Chaves</legend>
-                        <input type=\"text\" name=\"palavraChave\" placeholder=\"Digite Aqui\">
-                    </fieldset>
-
-                    <input type=\"submit\" value=\"Filtrar\">
-                </form>
-            </fieldset><br>
 
             <div class=\"secao\">
+
+                            <div class=\"anuncio\">
+                    <h2>Filtros:</h2>
+                    <h3>
+                </h3>
+                </div>
+                <div class=\"categorias\">
+                    <form class=\"selecao\" method=\"post\" action=\"../source/categorias2.php\">
+                        <fieldset class=\"subCategoria\">
+                            <legend>Preço</legend>
+                            <input type=\"number\" name=\"minPreco\" placeholder=\"Mínimo\" min=\"0\" class=\"filtroInput\">
+                            <input type=\"number\" name=\"maxPreco\" placeholder=\"Máximo\" class=\"filtroInput\">
+                        </fieldset>
+
+                        <fieldset class=\"subCategoria\">
+                            <legend>Ranking</legend>
+                            <input type=\"number\" name=\"minRanking\" placeholder=\"Mínimo\" class=\"filtroInput\">
+                            <input type=\"number\" name=\"maxRanking\" placeholder=\"Máximo\" class=\"filtroInput\">
+                        </fieldset>
+
+                        <fieldset class=\"subCategoria\">
+                            <legend>Data</legend>
+                            <label>De:</label>
+                            <input type=\"date\" name=\"minData\" placeholder=\"Mínimo\" class=\"filtroInput\">
+                            <label>Até:</lable>
+                            <input type=\"date\" name=\"maxData\" placeholder=\"Máximo\" class=\"filtroInput\">
+                        </fieldset>
+
+                        <fieldset class=\"subCategoria\">
+                            <legend>Palavras Chaves</legend>
+                            <input type=\"text\" name=\"palavraChave\" placeholder=\"Digite Aqui\" class=\"filtroInput\" id=\"palavrasChaves\">
+                        </fieldset>
+
+                        <input type=\"submit\" value=\"Filtrar\" id=\"filtrarButton\">
+                    </form>
+                </div>
+
                 <div class=\"anuncio\">
                     <h2>Pacotes:</h2>
                     <h3>

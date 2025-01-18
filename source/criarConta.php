@@ -58,6 +58,7 @@ echo "
                 <a href=\".$dirCar/categorias.php\" class=\"linkNav\">Categorias</a>
                 <a href=\".$dirCar/carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
                 <a href=\".$dirCar/quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+                <a href=\".$dirCar/historico.php\" class=\"linkNav\">Histórico</a>
                 <a href=\".$dirCar/../scripts/sair.php\" class=\"linkNav\">Sair</a>
             </nav>
             </header>";

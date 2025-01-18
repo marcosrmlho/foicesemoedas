@@ -59,6 +59,7 @@ echo "
                 <a href=\"./../../categorias.php\" class=\"linkNav\">Categorias</a>
                 <a href=\"./../../carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
                 <a href=\"./../../quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+                <a href=\"./historico.php\" class=\"linkNav\">Histórico</a>
                 <a href=\"./../../../scripts/sair.php\" class=\"linkNav\">Sair</a>
             </nav>
             </header>";

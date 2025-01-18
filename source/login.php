@@ -13,14 +13,24 @@ $alertCar = "";
 if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "false" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
     $dirCar = "/..";
     $dirCar2 = "../";
-    $alertCar = "<script>alert('Faça login para adicionar passeios ao carrinho.')</script>";
+    $alertCar = "<script>alert('Faça login como Cliente para adicionar passeios ao carrinho.')</script>";
 }
 if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "tryEntry" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
     $dirCar = "/..";
     $dirCar2 = "../";
-    $alertCar = "<script>alert('Faça login para acessar o carrinho.')</script>";
+    $alertCar = "<script>alert('Faça login como Cliente para acessar o carrinho.')</script>";
 }
 if (isset($queryParameters['carrinho']) && $queryParameters['carrinho'] == "guia" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
+    $dirCar = "/..";
+    $dirCar2 = "../";
+    $alertCar = "<script>alert('Guias não podem comprar passeios.')</script>";
+}
+if (isset($queryParameters['historico']) && $queryParameters['historico'] == "tryEntry" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
+    $dirCar = "/..";
+    $dirCar2 = "../";
+    $alertCar = "<script>alert('Faça login como Cliente para acessar o histórico.')</script>";
+}
+if (isset($queryParameters['historico']) && $queryParameters['historico'] == "guia" && !(isset($_POST['usuarioEmail']) && isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf']))) {
     $dirCar = "/..";
     $dirCar2 = "../";
     $alertCar = "<script>alert('Guias não podem comprar passeios.')</script>";
@@ -61,6 +71,7 @@ echo "
                 <a href=\".$dirCar/categorias.php\" class=\"linkNav\">Categorias</a>
                 <a href=\".$dirCar/carrinho.php\" class=\"linkNav\">Carrinho$numItensCarrinho</a>
                 <a href=\".$dirCar/quemSomos.php\" class=\"linkNav\">Quem Somos</a>
+                <a href=\".$dirCar/historico.php\" class=\"linkNav\">Histórico</a>
                 <a href=\".$dirCar/../scripts/sair.php\" class=\"linkNav\">Sair</a>
             </nav>
             </header>";

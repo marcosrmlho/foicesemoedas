@@ -1,8 +1,8 @@
 <?php
 include '../enviroment.php';
 include '../banco/banco.php';
-include '../scripts/checkHistorico.php';
 include '../scripts/checkCarrinho.php';
+include '../scripts/checkHistorico.php';
 include '../scripts/criarCardsHistorico.php';
 
 if ($numItensHistoricoAux > 0){
@@ -79,7 +79,7 @@ echo "
 
 echo "<section>
             <h1 class=\"inicio\">
-                Carrinho
+                Histórico
             </h1>
 
             <div class=\"secao\">

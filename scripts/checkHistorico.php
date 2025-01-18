@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $numItensHistorico = "";
 
 if (isset($_SESSION['clienteCPF'])){

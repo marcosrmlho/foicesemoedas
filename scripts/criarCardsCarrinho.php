@@ -15,7 +15,7 @@ if (isset($_SESSION['clienteCPF'])){
             <div id=\"dadosPasseio\" onclick=\"window.location.href='" . $url . "/source/passeios/mostraPasseio.php/?cardDir=" . $cardDir . "'\">" .
                 "<img src=\"../public/imagens/imgPasseios/$imgSource\" alt=\"$altImg\" class=\"imgPasseio\">
                 <div class=\"nomeCard\">$nome</div>
-                <div>Valor:<b>$valor</b></div>
+                <div>Valor: <b>$valor</b></div>
             </div>" . 
             "<button class=\"retirarDoCarrinho\" onclick=\"window.location.href='" . $url . "/scripts/delCarrinho.php/?cardDir=" . $cardDir . "'\"" . ">
                 <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-trash\" viewBox=\"0 0 16 16\">
