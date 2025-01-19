@@ -43,6 +43,8 @@ function validaCPF($cpf) {
 
 }
 
+$valuesCPF = [];
+$valuesEmail = [];
 $todosCPF = $conn->query("select usuarioCPF from Usuario");
 while ($row = $todosCPF->fetch_assoc()) {
     $valuesCPF[] = $row;
