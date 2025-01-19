@@ -3,6 +3,18 @@ include '../enviroment.php';
 include '../banco/banco.php';
 
 
+$_POST['minPreco'] = ($conn->real_escape_string($_POST['minPreco']));
+$_POST['maxPreco'] = ($conn->real_escape_string($_POST['maxPreco']));
+
+$_POST['minRanking'] = ($conn->real_escape_string($_POST['minRanking']));
+$_POST['maxRanking'] = ($conn->real_escape_string($_POST['maxRanking']));
+
+$_POST['minData'] = ($conn->real_escape_string($_POST['minData']));
+$_POST['maxData'] = ($conn->real_escape_string($_POST['maxData']));
+
+$_POST['palavraChave'] = ($conn->real_escape_string($_POST['palavraChave']));
+
+
 $minPreco = !($_POST['minPreco'] == '0' || floatval($_POST['minPreco'])) == 0 ? $_POST['minPreco']: 'null';
 $maxPreco =  !($_POST['maxPreco'] == '0' || floatval($_POST['maxPreco'])) == 0 ? $_POST['maxPreco']: 'null';
 

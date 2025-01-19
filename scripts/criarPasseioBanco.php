@@ -5,15 +5,16 @@ include '../banco/banco.php';
 include '../scripts/funcoesUniversais.php';
 include '../scripts/checkCarrinho.php';
 
-$horaInicio = $_POST['horaInicio'];
-$horaFinal = $_POST['horaFinal'];
-$dataInicio = $_POST['dataInicio'];
-$dataFinal = $_POST['dataFinal'];
-$nome = $_POST['nome'];
-$ranking = $_POST['ranking'];
-$valor = $_POST['valor'];
-$descricao = $_POST['descricao'];
-$altImg = $_POST['altImg'];
+
+$horaInicio = ($conn->real_escape_string($_POST['horaInicio']));
+$horaFinal = ($conn->real_escape_string($_POST['horaFinal']));
+$dataInicio = ($conn->real_escape_string($_POST['dataInicio']));
+$dataFinal = ($conn->real_escape_string($_POST['dataFinal']));
+$nome = ($conn->real_escape_string($_POST['nome']));
+$ranking = ($conn->real_escape_string($_POST['ranking']));
+$valor = ($conn->real_escape_string($_POST['valor']));
+$descricao = ($conn->real_escape_string($_POST['descricao']));
+$altImg = ($conn->real_escape_string($_POST['altImg']));
 
 // Caminho absoluto para a pasta de upload na raiz do sistema
 $uploadDir = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'foicesemoedas' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'imagens' . DIRECTORY_SEPARATOR . 'imgPasseios';

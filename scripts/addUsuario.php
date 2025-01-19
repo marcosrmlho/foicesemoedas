@@ -3,6 +3,17 @@ session_start();
 include '../enviroment.php';
 include '../banco/banco.php';
 
+$_POST['nome'] = ($conn->real_escape_string($_POST['nome']));
+$_POST['usuarioCPF'] = ($conn->real_escape_string($_POST['usuarioCPF']));
+$_POST['dataNasc'] = ($conn->real_escape_string($_POST['dataNasc']));
+$_POST['usuarioEmail'] = ($conn->real_escape_string($_POST['usuarioEmail']));
+$_POST['DDD'] = ($conn->real_escape_string($_POST['DDD']));
+$_POST['usuarioTel'] = ($conn->real_escape_string($_POST['usuarioTel']));
+$_POST['usuarioSenha'] = ($conn->real_escape_string($_POST['usuarioSenha']));
+$_POST['usuarioSenhaConf'] = ($conn->real_escape_string($_POST['usuarioSenhaConf']));
+$_POST['usuarioTipo'] = ($conn->real_escape_string($_POST['usuarioTipo']));
+
+
 function validaCPF($cpf) {
  
     // Extrai somente os números
@@ -64,7 +75,7 @@ isset($_POST['usuarioSenha']) && isset($_POST['usuarioSenhaConf'])
                     $email = $_POST['usuarioEmail'];
                     $senha = password_hash($_POST['usuarioSenha'], PASSWORD_BCRYPT);
                     $tipoUser = strtolower($_POST['usuarioTipo']);
-                    $tel = $_POST['DDD'] + str_replace('-', '', $_POST['usuarioTel']);
+                    $tel = $_POST['DDD'] . str_replace('-', '', $_POST['usuarioTel']);
 
                     $num = ($conn -> query("select count(*) as num from Usuario") -> fetch_assoc())['num'];
                     $sqlEmail = $conn -> query("select usuarioEmail from Usuario");

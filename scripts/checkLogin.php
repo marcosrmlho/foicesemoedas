@@ -3,14 +3,14 @@ include '../enviroment.php';
 include '../banco/banco.php';
 session_start();
 
-$usuarioEmail = $_POST['usuarioEmail'];
+$usuarioEmail = ($conn->real_escape_string($_POST['usuarioEmail']));
 
 $user = $conn -> query("select * from Usuario where usuarioEmail = '$usuarioEmail'");
 
 if (($user -> num_rows) == 1){
     $user = $user -> fetch_assoc();
 
-    $usuarioSenha = $_POST['usuarioSenha'];
+    $usuarioSenha = ($conn->real_escape_string($_POST['usuarioSenha']));
     $hashUserSenha = $user['usuarioSenha'];
 
     if (password_verify($usuarioSenha, $hashUserSenha)){
