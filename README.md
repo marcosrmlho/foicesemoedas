@@ -1,2 +1,2 @@
-# foicesemoedas
-Projeto Foices e Moedas - 2AINFO
+# Kamikaze Radical
+Projeto Kamikaze Radical - 2AINFO
